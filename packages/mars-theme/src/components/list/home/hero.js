@@ -16,30 +16,28 @@ const Hero = (props) => {
             loop="loop"
             muted
             autoPlay="autoplay"
-            poster="https://thecannabisdepotco.localbrokermarketing.com/wp-content/uploads/2020/11/Screen_Shot_2020-10-27_at_8.24.45_PM_lpfgir-scaled.jpg"
+            poster="https://wp.sankalprealty.us/wp-content/uploads/2020/12/Screen-Shot-2020-12-13-at-2.59.01-PM-scaled.jpg"
           >
             <source
-              src="https://thecannabisdepotco.localbrokermarketing.com/wp-content/uploads/2020/11/marijuana-plants-canopy-indoor-V5TYAEH_1_o8mlei.webm"
+              src="https://wp.sankalprealty.us/wp-content/uploads/2020/12/aerial-dallas-flying-over-freeway-traffic-camera-m-J2LACB8.webm"
               type="video/webm"
             />
             <source
-              src="https://thecannabisdepotco.localbrokermarketing.com/wp-content/uploads/2020/11/marijuana-plants-canopy-indoor-V5TYAEH_1_1.mp4"
+              src="https://wp.sankalprealty.us/wp-content/uploads/2020/12/aerial-dallas-flying-over-freeway-traffic-camera-m-J2LACB8.mp4"
               type="video/mp4"
             />
           </BackgroundVideo>
         </BrowserView>
 
         <MobileView>
-          <BackgroundImage src="https://thecannabisdepotco.localbrokermarketing.com/wp-content/uploads/2020/11/Screen_Shot_2020-10-27_at_8.24.45_PM_lpfgir-scaled.jpg" />
+          <BackgroundImage src="https://wp.sankalprealty.us/wp-content/uploads/2020/12/Screen-Shot-2020-12-13-at-2.59.01-PM-scaled.jpg" />
         </MobileView>
 
         <BackgroundVideoContent>
-          <HeroH1>Better Cannabis.</HeroH1>
+          <HeroH1>Welcome to the country’s <span style={{color: "#7CD176"}}>fastest growing </span>commercial real estate market.</HeroH1><br/>
           <Divider />
-          <HeroH1Colored>Better Prices.</HeroH1Colored>
-          <HeroH2>Pueblo, Colorado’s Favorite Dispensary.</HeroH2>
-
-          <Link link="https://weedmaps.com/dispensaries/cannabis-depot-2">
+{/* 
+          <Link link="">
             <HeroButtonMain variant="contained" color="primary">
               Order Online Now!
             </HeroButtonMain>
@@ -53,7 +51,7 @@ const Hero = (props) => {
             >
               Get directions
             </HeroButtonSecondary>
-          </Link>
+          </Link> */}
         </BackgroundVideoContent>
 
         <DownArrowBounce
@@ -88,6 +86,22 @@ const Hero = (props) => {
 
 export default connect(Hero);
 
+const PageHero = styled.div`
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  width: 100%;
+  height: 70vh;
+  margin: 30px 0 0 0;
+
+  @media (max-width: 768px) {
+    height: 95vh;
+  }
+  @media (max-aspect-ratio: 114/100) {
+    height: 95vh;
+  }
+`;
+
 const BackgroundVideo = styled.video`
   position: absolute;
   object-fit: cover;
@@ -106,6 +120,29 @@ const BackgroundVideo = styled.video`
   }
   video::-webkit-media-controls {
     display: none;
+  }
+`;
+
+const BackgroundVideoContent = styled.div`
+  position: relative;
+  align: center;
+  text-align: left;
+  width: 80%;
+  left: 0px;
+  top: 0px;
+  padding: 20vh 10%;
+
+  @media (max-width: 768px) {
+    text-align: left;
+    width: 75vw;
+    margin: auto;
+    padding: 15vw 5vw 10vw 5vw;
+  }
+  @media (max-aspect-ratio: 114/100) {
+    text-align: left;
+    width: 80vw;
+    margin: 10vh 10px 0 10vw;
+    padding: 0 0 0 0;
   }
 `;
 
@@ -131,63 +168,28 @@ const BackgroundImage = styled.img`
 
 // `
 
-const BackgroundVideoContent = styled.div`
-  position: relative;
-  align: center;
-  text-align: center;
-  width: 90%;
-  left: 0px;
-  top: 0px;
-  padding: 25vh 5%;
-
-  @media (max-width: 768px) {
-    text-align: left;
-    width: 75vw;
-    margin: auto;
-    padding: 15vw 5vw 10vw 5vw;
-  }
-  @media (max-aspect-ratio: 114/100) {
-    text-align: left;
-    width: 80vw;
-    margin: 10vh 10px 0 10vw;
-    padding: 0 0 0 0;
-  }
-`;
 
 const DownArrowBounce = styled(Animated)`
   position: fixed;
   margin: auto;
-  bottom: 1vw;
+  bottom: 15vw;
   width: 100%;
   opacity: 0.3;
-
-  --animate-repeat: 2;
 `;
 
-const PageHero = styled.div`
-  position: relative;
-  overflow: hidden;
-  background-color: black;
-  width: 100%;
-  height: 95vh;
 
-  @media (max-width: 768px) {
-    height: 95vh;
-  }
-  @media (max-aspect-ratio: 114/100) {
-    height: 95vh;
-  }
-`;
 
 const HeroH1 = styled.h1`
-  color: #aaafe2;
-  font-size: 6vw;
+  color: #FFFFFF;
+  font-size: 5vw;
   letter-spacing: -3.91pt;
+  line-height: 8vh;
   display: inline;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-weight: 700;
   margin: 0px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-style: italic;
 
   @media (max-aspect-ratio: 114/100) {
     font-size: min(130px, 15vw);
@@ -204,33 +206,33 @@ const HeroH1 = styled.h1`
   }
 `;
 
-const HeroH1Colored = styled(HeroH1)`
-  color: #c2a878;
-`;
+// const HeroH1Colored = styled(HeroH1)`
+//   color: #c2a878;
+// `;
 
-const HeroH2 = styled.h2`
-  color: #f1f5f2;
-  text-align: center;
-  font-size: 2.5vw;
-  letter-spacing: -1pt;
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-  font-weight: 500;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+// const HeroH2 = styled.h2`
+//   color: #f1f5f2;
+//   text-align: center;
+//   font-size: 2.5vw;
+//   letter-spacing: -1pt;
+//   font-family: "Montserrat", sans-serif;
+//   margin: 0;
+//   font-weight: 500;
+//   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 
-  @media (max-width: 768px) {
-    font-size: 4vw;
-    letter-spacing: 0.05vw;
-    text-align: left;
-    margin: 2vw 0 0 0;
-  }
-  @media (max-aspect-ratio: 114/100) {
-    font-size: 4vw;
-    letter-spacing: 0.05vw;
-    text-align: left;
-    margin: 2vw 0 0 0;
-  }
-`;
+//   @media (max-width: 768px) {
+//     font-size: 4vw;
+//     letter-spacing: 0.05vw;
+//     text-align: left;
+//     margin: 2vw 0 0 0;
+//   }
+//   @media (max-aspect-ratio: 114/100) {
+//     font-size: 4vw;
+//     letter-spacing: 0.05vw;
+//     text-align: left;
+//     margin: 2vw 0 0 0;
+//   }
+// `;
 
 const HeroButtonMain = styled.button`
   border: 2px;

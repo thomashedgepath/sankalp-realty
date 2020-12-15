@@ -12,7 +12,7 @@ const EmailSignup = ({ state }) => {
     <>
      <SectionContainer key={"email-signup-section"}>
        <ContentContainer>
-            Join our mailing list to stay up to date with the latest news and promotions.
+       North Texas is growing fast. Join our mailing list to stay up to date.
         </ContentContainer>
         <InputContainer>
             <EmailInputField id="outlined-basic" fullWidth label="Enter your email to sign up!" variant="outlined" />
@@ -42,10 +42,9 @@ const SectionContainer = styled.div`
     position: relative;
     overflow: hidden;
     flex-wrap: none;
-    background-color: #F1F5F2;
+    background-color: #2B4F77;
     height: 100%;
     width: 100%;
-    background-color: #D8D8D8;
     text-align: center;
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
     z-index: 1000;
@@ -57,8 +56,8 @@ const ContentContainer = styled.div`
     display: block;
     
     font-size: 2.5vw;
-    color: #007A0F;
-    
+    color: #F3F3F3;
+    text-transform: uppercase;
     margin: 0px;
     padding: 20px 0 5px 0;
     font-family: 'Overpass', sans-serif;

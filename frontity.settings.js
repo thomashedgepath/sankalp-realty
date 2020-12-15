@@ -18,17 +18,17 @@ const settings = {
               "/"
             ],
             [
-              "Our Products",
-              "/products"
+              "Services",
+              "/services/"
             ],
             [
-              "Get Directions",
-              "/locations/"
+              "Our Properties",
+              "/our-properties/"
             ],
-            // [
-            //   "Blog",
-            //   "/category/blog/"
-            // ]
+            [
+              "Contact",
+              "/contact/"
+            ]
           ],
           "featured": {
             "showOnList": false,

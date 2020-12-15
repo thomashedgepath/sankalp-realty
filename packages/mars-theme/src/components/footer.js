@@ -4,7 +4,7 @@ import Link from "./link";
 
 const Footer = (props) => {
   let logo_url =
-    "https://thecannabisdepotco.localbrokermarketing.com/wp-content/uploads/2020/11/The-Cannabis-Depot-Logo-1.svg";
+    "https://wp.sankalprealty.us/wp-content/uploads/2020/12/sankalp-logo-1.svg";
 
   return (
     <>
@@ -17,34 +17,51 @@ const Footer = (props) => {
           <Column2>
           <div style={{margin: "0 10px 0 10px"}}> 
             <p>
-              <span style={{ color: "#C2A878", textTransform: "uppercase" }}>Address:</span>
+              <span style={{ color: "#FECB65", textTransform: "uppercase" }}>Address:</span>
               <br />
-              <Link link="https://g.page/cannabisdepotpueblo?share">2440 North Interstate 25 <br />
-              Pueblo, Colorado 81008
+              <Link link="https://goo.gl/maps/4V61qdsbij9Ptvu16">
+              8668 John Hickman Pkwy, Suite 906<br/>
+              Frisco, TX 75034
               </Link>
               <br />
               <br />
-              <span style={{ color: "#C2A878", textTransform: "uppercase" }}>Phone:</span>
+              <span style={{ color: "#FECB65", textTransform: "uppercase" }}>Phone:</span>
               <br />
-              (719) 283-8017
+              (469) 712-6773
               <br />
             </p>
           </div>
           </Column2>
           <Column3>
           <div style={{margin: "0 10px 0 10px"}}>
-            <p><span style={{ color: "#C2A878", textTransform: "uppercase" }}>Store Hours:</span><br/> 
-            Monday - Sunday: 8:00am - 10:45pm<br/><br/>
-            <span style={{ color: "#C2A878", textTransform: "uppercase" }}>Reach Us:</span><br/></p>
-            <SocialIcon id="facebook" src={"https://thecannabisdepotco.localbrokermarketing.com/wp-content/uploads/2020/11/facebook_yqifym.svg"} />
-            <SocialIcon src={"https://thecannabisdepotco.localbrokermarketing.com/wp-content/uploads/2020/11/twitter_pdsiin.svg"} />
-            <SocialIcon src={"https://thecannabisdepotco.localbrokermarketing.com/wp-content/uploads/2020/11/instagram_gzabzh.svg"} />
-            <SocialIcon src={"https://thecannabisdepotco.localbrokermarketing.com/wp-content/uploads/2020/11/youtube_l1fr46.svg"} />
-            <SocialIcon src={"https://thecannabisdepotco.localbrokermarketing.com/wp-content/uploads/2020/11/email_eoesbr.svg"} />
+            <p><span style={{ color: "#FECB65", textTransform: "uppercase" }}>Our Services:</span><br/> 
+            Site Selection <br /> Planning & Development  <br /> Investment <br /> Project Leasing <br /> Tenant Representation
+            
+            </p>
+
             
           </div>
           </Column3>
+          <Column4>
+          <div style={{margin: "0 10px 0 10px"}}>
+            <p>
+            <span style={{ color: "#FECB65", textTransform: "uppercase" }}>Reach Us:</span><br/>
+            </p>
+            <SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/facebook.svg"} />
+            <SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/LinkedIn.svg"} />
+            <SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/youtube.svg"} />
+            <SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/email.svg"} />
+
+            
+          </div>
+          </Column4>
         </ContentContainer>
+        <DisclaimerContainer>
+          <DisclaimerText style={{textAlign: "center", color: "white", fontWeight: "500", textTransform: "uppercase"}}><Link link={'https://wp.sankalprealty.us/wp-content/uploads/2020/12/TREC_CPN.pdf'}>Texas Real Estate Commission Consumer Protection Notice</Link> |  <Link link={'https://wp.sankalprealty.us/wp-content/uploads/2020/12/IABS-MP.pdf'}>Texas Real Estate Commission Information About Brokerage Services</Link><br/><br/><br/></DisclaimerText>
+          <DisclaimerText style={{textAlign: "left"}}>© 2020 Sankalp Realty, LLC   |   Website by LocalBrokerMarketing<br/></DisclaimerText>
+          <DisclaimerText> The information contained herein was obtained from sources believed reliable; however, Sankalp Realty LLC makes no guarantees, warranties or representations as to the completeness or accuracy thereof. The information contained in this website is submitted subject to errors, omissions, change of price or conditions, prior sale or lease, or withdrawal without notice. </DisclaimerText>
+          <DisclaimerText>Product name, logos, brands, and other trademarks featured or referred to in this website are the property of their respective trademark holders.</DisclaimerText>
+        </DisclaimerContainer>
       </SectionContainer>
     </>
   );
@@ -52,20 +69,59 @@ const Footer = (props) => {
 
 export default connect(Footer);
 
+
 // Main SectionContainer for the footer needs to match the bottom padding height from index.js
+// Set footer height to automatically change both variables. 
+export const footerHeight = "50vh"
+
 const SectionContainer = styled.div`
   position: absolute;
   bottom: 0;
   overflow: hidden;
   flex-wrap: none;
-  background-color: #14281d;
-  height: 25vh;
+  background-color: #1F4E4A;
+
+  height: ${footerHeight};
   width: 100%;
   text-align: center;
 
   @media (max-width: 768px) {
       height: 60vh;
     }
+`;
+
+const ContentContainer = styled.div`
+  display: flex;
+  padding: 20px 10vw;
+  justify-content: space-evenly;
+  justify-items: center;
+  text-align: center;
+  border-top: 10px solid #F79837;
+  color: #007a0f;
+  font-family: 'Overpass', sans-serif;
+
+  @media (max-width: 768px) {
+    letter-spacing: -0.5px;
+    display: block;
+    padding: 2vw;
+  }
+`;
+
+
+const Logo = styled.img` 
+    width: 10vw;
+    max-width: 80px;
+    min-width:60px;
+    margin: 1vw 2vw 1vw 3vw;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
+
+  @media (max-width: 768px) {
+    width: 40vw;
+    margin: 0 0 0 0;
+    align-content: left;
+    align-items: left;
+    justify-content: left;
+  }
 `;
 
 const SocialIcon = styled.img`
@@ -84,39 +140,17 @@ const SocialIcon = styled.img`
 
 `;
 
-const Logo = styled.img`
-  width: 15vw;
-  max-width: 200px;
-  height: auto;
-  margin: 0 6vw 0 0;
+ const DisclaimerText = styled.p`
+  color: #ACACAC;
+  text-align: left;
+  font-weight: 200;
+  font-size: min(1.25vw, 12px);
 
-  @media (max-width: 768px) {
-    width: 40vw;
-    margin: 0 0 0 0;
-    align-content: left;
-    align-items: left;
-    justify-content: left;
-  }
-`;
+ `
+ const DisclaimerContainer = styled.div`
+  padding: 5vh 10vw;
+ `
 
-const ContentContainer = styled.div`
-  display: flex;
-  padding: 20px 20vw;
-  justify-content: space-evenly;
-  justify-items: center;
-  text-align: center;
-
-  color: #007a0f;
-
-  font-family: 'Overpass', sans-serif;
-  letter-spacing: -1.98px;
-
-  @media (max-width: 768px) {
-    letter-spacing: -0.5px;
-    display: block;
-    padding: 2vw;
-  }
-`;
 const Column1 = styled.div`
   ${'' /* background-color: #007a0f; */}
   color: #fff;
@@ -142,12 +176,11 @@ const Column2 = styled.div`
   align-content: left;
   align-items: left;
   justify-content: left;
-  width: min(30vw, 280px);
+  width: min(30vw, 300px);
 
 
   font-size: min(1.25vw, 16px);
   color: #f1f5f2;
-  font-family: "Montserrat", sans-serif;
   letter-spacing: -0.88px;
   text-align: left;
   font-weight: 300;
@@ -170,11 +203,37 @@ const Column3 = styled.div`
   align-content: left;
   align-items: left;
   justify-content: left;
+  width: min(30vw, 250px);
+
+  font-size: min(1.25vw, 16px);;
+  color: #f1f5f2;
+  letter-spacing: -0.88px;
+  text-align: left;
+  font-weight: 300;
+
+  @media (max-width: 768px) {
+      font-size: 4vw;
+      width: 100vw;
+      text-align: left;
+      align-content: left;
+      align-items: left;
+      justify-content: left;
+    }
+  
+`;
+
+const Column4 = styled.div`
+  ${'' /* background-color: #e39100; */}
+  
+  height: auto;
+  display: flex;
+  align-content: left;
+  align-items: left;
+  justify-content: left;
   width: min(30vw, 280px);
 
   font-size: min(1.25vw, 16px);;
   color: #f1f5f2;
-  font-family: "Montserrat", sans-serif;
   letter-spacing: -0.88px;
   text-align: left;
   font-weight: 300;

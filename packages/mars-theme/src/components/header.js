@@ -6,7 +6,7 @@ import MobileMenu from "./menu";
 
 
 const Header = (props) => {
-  let logo_url = "https://thecannabisdepotco.localbrokermarketing.com/wp-content/uploads/2020/11/The-Cannabis-Depot-Logo-1.svg"
+  let logo_url = "https://wp.sankalprealty.us/wp-content/uploads/2020/12/sankalp-logo-1.svg"
   return (
     <>
       {/* {console.log(props.isMobile)} */}
@@ -51,7 +51,8 @@ const HeaderContainer = styled.header`
   right: 0;
   position: fixed;
   color: #fff;
-  background-color: #14281D;
+  background-color: #1F4E4A;
+  border-bottom: 10px solid #F79837;
 `;
 const StyledToolbar = styled.div`
     font-size: 0.875rem;
@@ -66,7 +67,7 @@ const StyledToolbar = styled.div`
     align-items: center;
     padding-left: 24px;
     padding-right: 24px;
-    min-height: 64px;
+    min-height: 100px;
     
     @media (max-width: 768px) {
       padding-left: 0px;
@@ -75,7 +76,7 @@ const StyledToolbar = styled.div`
 
 const LogoContainer = styled.div`
     width: auto;
-    height: 75px;
+    height: 100px;
     margin: 1em;
 
     @media (max-width: 768px) {
@@ -84,9 +85,9 @@ const LogoContainer = styled.div`
     }
 `;
 const Logo = styled.img`
-    width: 20vw;
-    max-width: 380px;
-    min-width:240px;
+    width: 10vw;
+    max-width: 120px;
+    min-width:80px;
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
 
     

@@ -10,46 +10,23 @@ const MainSection = ({ state }) => {
     <>
       <SectionContainer key={"main-section"}>
         <ContentContainer>
-          <LeftContent>
-            <ScrollAnimation animateOnce animateIn="fadeInLeft" duration={3}>
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <PrimaryText>
-                  <span style={{ color: "black" }}>At</span>
-                  <span style={{ color: "#007A0F", fontStyle: "italic" }}>
-                    {"The Cannabis Depot "}
-                  </span>
-                  <span style={{ color: "black" }}>
-                    we are committed to providing safe, consistent, high quality
-                    marijuana products at prices that can’t be beat.
-                    <br />
-                  </span>
-                  <SecondaryText>
-                    Navigating the countless marijuana products on the market
-                    today can be challenging for first-timers and experienced
-                    smokers alike. Our knowledgeable team is dedicated to
-                    helping you find the right products for any situation.
-                  </SecondaryText>
-                  {/* <Divider />
-                    <span style={{color: "#F60000"}}>Flower</span> / 
-                    <span style={{color: "#F2A300"}}> Concentrates</span> / 
-                    <span style={{color: "#3185FF"}}> Edibles</span> / 
-                    <span style={{color: "#007A0F"}}> Pre-rolls</span> / 
-                    <span style={{color: "#544482"}}> Topicals</span> / 
-                    <span style={{color: "#F400A2"}}> Tinctures</span> / 
-                    <span style={{color: "#7AD270"}}> THC and CBD</span> */}
-                </PrimaryText>
-              </div>
-            </ScrollAnimation>
-          </LeftContent>
-          <RightContent>
-            <ScrollAnimation animateOnce animateIn="fadeInRight" duration={3}>
-              <StoreImage
-                src={
-                  "https://thecannabisdepotco.localbrokermarketing.com/wp-content/uploads/2020/12/IMG_0917-scaled.jpeg"
-                }
-              />
-            </ScrollAnimation>
-          </RightContent>
+          <ScrollAnimation animateOnce animateIn="fadeInDown" duration={1}>
+            <PrimaryText>
+              Trusted Experience. <br /> Trusted Insight.
+            </PrimaryText>
+            <SecondaryText>
+              We know what it takes to <span style={{fontFamily: 'Permanent Marker', color: "#4BA2AA"}}>get things done</span> in North Texas.
+            </SecondaryText>
+            <Button src="https://wp.sankalprealty.us/wp-content/uploads/2020/12/Start-Today.svg"></Button>
+            <PText>
+              Every decision in Real Estate is a big decision. Wether you are
+              leasing your first Retail storefront, building your 100th
+              Industrial development, or looking for quality tenants to fill
+              your new Office building our team will treat your project like our
+              own.<br/><br/>
+              Site Selection / Planning & Development  / Investment / Project Leasing / Tenant Representation
+            </PText>
+          </ScrollAnimation>
         </ContentContainer>
       </SectionContainer>
     </>
@@ -67,58 +44,27 @@ const SectionContainer = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  display: grid;
-  grid-template-columns: 60% 40%;
-  grid-template-rows: 100%;
+  display: flex;
   justify-content: space-evenly;
   justify-items: center;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
+  padding: 5vh 15vw;
+  
 
   @media (max-width: 768px) {
     display: block;
   }
 `;
 
-const LeftContent = styled.div`
-  grid-column-start: 1;
-  width: 100%;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  font-weight: 500;
-`;
-
-const RightContent = styled.div`
-  grid-column-start: 2;
-  display: flex;
-  width: 100%;
-
-  @media (max-width: 768px) {
-    margin: 0 5px 0 0;
-  }
-`;
-
-const StoreImage = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
-
-  @media (max-width: 768px) {
-    mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
-  }
-`;
-
-const PrimaryText = styled.p`
+const PrimaryText = styled.h1`
   text-align: left;
   font-family: "Overpass", sans-serif;
-  font-size: 2.25vw;
-  color: #858585;
-  letter-spacing: -1.98px;
-  margin: 5vw;
+  font-size: 6vw;
+  color: #ACACAC;
+  line-height: 8vh;
+  letter-spacing: -0.5vw;
+  margin:0;
 
   @media (max-width: 768px) {
     font-size: 6vw;
@@ -126,11 +72,25 @@ const PrimaryText = styled.p`
   }
 `;
 
-const SecondaryText = styled.span`
-  text-align: left;
+const SecondaryText = styled.h2`
   font-family: "Overpass", sans-serif;
+  font-size: 2.2vw;
+  color: black;
+  text-align: left;
+  font-weight: 600;
+  margin:0;
+
+  @media (max-width: 768px) {
+    font-size: 5.5vw;
+  }
+`;
+
+const PText = styled.p`
+  font-family: "Overpass", sans-serif;
+  text-align: left;
   font-size: 1.75vw;
   color: #858585;
+  margin: 0;
 
   @media (max-width: 768px) {
     font-size: 5.5vw;
@@ -140,3 +100,12 @@ const SecondaryText = styled.span`
 //   width: 100%;
 //   height: 2vw;
 // `;
+
+const Button = styled.img`
+  width: 30vw;
+  margin: 5vh 0; 
+  
+  &:hover{
+    transform: scale(1.1);
+  }
+`;

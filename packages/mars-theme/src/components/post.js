@@ -3,7 +3,7 @@ import { connect, styled } from "frontity";
 import Link from "./link";
 import List from "./list";
 import FeaturedMedia from "./featured-media";
-import Locations from "./locations/locations";
+import Locations from "./properties-page/locations";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.

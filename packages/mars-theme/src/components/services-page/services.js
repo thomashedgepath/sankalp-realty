@@ -2,7 +2,7 @@ import React from "react";
 import { connect, styled } from "frontity";
 import Link from "../link";
 import { BrowserView, MobileView } from "react-device-detect";
-import { product_data } from "./product-content";
+import { product_data } from "./services-content";
 
 const Products = ({ state }) => {
   return (

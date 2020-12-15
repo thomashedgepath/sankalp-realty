@@ -9,9 +9,9 @@ import Title from "./title";
 import PageError from "./page-error";
 import Home from "./list/home/home";
 import Footer from "./footer";
-import Locations from "./locations/locations";
-import Products from "./products/products";
-import AgeModal from "../components/age-verify-modal";
+import Locations from "./properties-page/locations";
+import Products from "./services-page/services";
+import { footerHeight } from "../components/footer";
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -29,14 +29,6 @@ const Theme = ({ state }) => {
       <Head>
         <meta name="description" content={state.frontity.description} />
         <html lang="en" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
-        />
       </Head>
 
       {/* Add some global styles for the whole site, like body or a's. 
@@ -45,13 +37,6 @@ const Theme = ({ state }) => {
 
       {/* Conditions must be met for age verification */}
       <PageContainer>
-        {state.theme.isAgeVerified ? (
-          <></>
-        ) : (
-          <>
-            <AgeModal />
-          </>
-        )}
         {/* Add the header of the site. */}
         <HeadContainer>
           <Header />
@@ -63,8 +48,8 @@ const Theme = ({ state }) => {
         <ContentWrap>
           <Main key={"main-container"}>
             <Switch>
-              <Locations when={data.link === "/locations/"} />
-              <Products when={data.link === "/products/"} />
+              <Locations when={data.link === "/our-properties/"} />
+              <Products when={data.link === "/services/"} />
               <Loading when={data.isFetching} />
               <List when={data.isArchive} />
               <Post when={data.isPostType} />
@@ -82,12 +67,17 @@ const Theme = ({ state }) => {
 export default connect(Theme);
 
 const globalStyles = css`
+  * {
+    @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+  }
   body {
     margin: 0;
     font-size: 1em;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
+  }  
   a,
   a:visited {
     color: inherit;
@@ -123,7 +113,7 @@ const Main = styled.div`
 
 // Padding Bottom for Content Wrap needs to match footer height in footer.js
 const ContentWrap = styled.div`
-  padding-bottom: 25vh;
+  padding-bottom: ${footerHeight};
 
   @media (max-width: 768px) {
     padding-bottom: 60vh;

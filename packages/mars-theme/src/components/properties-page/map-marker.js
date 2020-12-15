@@ -4,8 +4,8 @@ import { Marker } from "react-map-gl";
 import { styled } from "frontity";
 
 const CustomMarker = styled.img`
-    height: auto;
-    width: 100px;
+    height: 50px;
+    width: auto;
     z-index: 1;
     &:hover {
       transform: scale(1.5);
@@ -15,7 +15,7 @@ const CustomMarker = styled.img`
 
 function MapMarker(props) {
   const image_url =
-    "http://thecannabisdepotco.localbrokermarketing.com/wp-content/uploads/2020/11/The-Cannabis-Depot-Logo-1.svg";
+    "https://wp.sankalprealty.us/wp-content/uploads/2020/12/sankalp-logo-marker.svg";
 
   return (
     <>
@@ -26,8 +26,8 @@ function MapMarker(props) {
               key={props.coordinates["id"].toString()}
               longitude={parseFloat(props.coordinates["lng"])}
               latitude={parseFloat(props.coordinates["lat"])}
-              offsetLeft={-40}
-              offsetTop={-20}
+              offsetLeft={-15}
+              offsetTop={-45}
               style={{ "z-index": "1" }}
             >
               <CustomMarker

@@ -19,8 +19,6 @@ const marsTheme = {
     theme: {
       menu: [],
       isMobileMenuOpen: false,
-      isAgeVerified: false,
-      didVerifyFail: false,
       featured: {
         showOnList: false,
         showOnPost: false,
@@ -38,12 +36,6 @@ const marsTheme = {
       },
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
-      },
-      toggleAgeVerified: ({ state }) => {
-        state.theme.isAgeVerified = !state.theme.isAgeVerified;
-      },
-      toggleDidVerifyFail: ({ state }) => {
-        state.theme.didVerifyFail = !state.theme.didVerifyFail;
       },
     },
   },
