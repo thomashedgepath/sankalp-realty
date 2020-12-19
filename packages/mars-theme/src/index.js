@@ -23,6 +23,7 @@ const marsTheme = {
         showOnList: false,
         showOnPost: false,
       },
+      isContactModalOpen: true,
     },
   },
   /**
@@ -31,11 +32,17 @@ const marsTheme = {
    */
   actions: {
     theme: {
+      beforeSSR: async ({ actions }) => {
+        await actions.source.fetch("/contact");
+      },
       toggleMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = !state.theme.isMobileMenuOpen;
       },
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
+      },
+      toggleContactModal: ({ state }) => {
+        state.theme.isContactModalOpen = !state.theme.isContactModalOpen;
       },
     },
   },

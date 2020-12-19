@@ -70,6 +70,7 @@ const ButtonImage = styled.img`
   left: 35vw;
   width: 30vw;
   object-fit: cover;
+  cursor: pointer;
   
   &:hover{
     transform: scale(1.1);

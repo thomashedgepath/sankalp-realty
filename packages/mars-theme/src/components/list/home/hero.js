@@ -62,15 +62,15 @@ const Hero = (props) => {
           isVisible={true}
 
         >
-          <svg width="auto" height="4vh" viewBox="0 0 364 200" version="1.1">
+          <svg length="auto" height="4vh" viewBox="0 0 364 200" version="1.1">
             <g
               id="Page-1"
               stroke="none"
-              stroke-width="1"
+              strokeWidth="1"
               fill="none"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             >
-              <g id="image" fill="#FFFFFF" fill-rule="nonzero">
+              <g id="image" fill="#FFFFFF" fillRule="nonzero">
                 <path
                   d="M332.287676,5.39253481 L181.805105,155.730419 L31.3225339,5.3743934 C24.148048,-1.79146447 12.5417278,-1.79146447 5.36724197,5.3743934 C-1.78908066,12.5402513 -1.78908066,24.1507551 5.36724197,31.316613 L168.818377,194.625607 L168.818377,194.625607 L168.818377,194.625607 C175.9747,201.791464 187.599183,201.791464 194.755506,194.625607 L358.206641,31.316613 C365.362964,24.1507551 365.362964,12.5221098 358.206641,5.35625198 C351.068482,-1.77332305 339.443998,-1.77332305 332.287676,5.39253481 Z"
                   id="Expand_More"

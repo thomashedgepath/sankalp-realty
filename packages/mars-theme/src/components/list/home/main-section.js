@@ -2,7 +2,7 @@ import React from "react";
 import { connect, styled } from "frontity";
 import ScrollAnimation from "react-animate-on-scroll";
 
-const MainSection = ({ state }) => {
+const MainSection = ({ state, actions }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
 
@@ -17,7 +17,7 @@ const MainSection = ({ state }) => {
             <SecondaryText>
               We know what it takes to <span style={{fontFamily: 'Permanent Marker', color: "#4BA2AA"}}>get things done</span> in North Texas.
             </SecondaryText>
-            <Button src="https://wp.sankalprealty.us/wp-content/uploads/2020/12/Start-Today.svg"></Button>
+            <Button onClick={actions.theme.toggleContactModal} src="https://wp.sankalprealty.us/wp-content/uploads/2020/12/Start-Today.svg"></Button>
             <PText>
               Every decision in Real Estate is a big decision. Wether you are
               leasing your first Retail storefront, building your 100th
@@ -104,6 +104,7 @@ const PText = styled.p`
 const Button = styled.img`
   width: 30vw;
   margin: 5vh 0; 
+  cursor: pointer;
   
   &:hover{
     transform: scale(1.1);
