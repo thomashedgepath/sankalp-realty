@@ -171,13 +171,11 @@ const BackgroundImage = styled.img`
 
 const DownArrowBounce = styled(Animated)`
   position: fixed;
-  margin: auto;
+  margin: 0 45vw 0 45vw ;
   bottom: 15vw;
-  width: 100%;
+  width: 10vw;
   opacity: 0.3;
 `;
-
-
 
 const HeroH1 = styled.h1`
   color: #FFFFFF;

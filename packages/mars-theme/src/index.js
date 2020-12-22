@@ -23,7 +23,7 @@ const marsTheme = {
         showOnList: false,
         showOnPost: false,
       },
-      isContactModalOpen: true,
+      isContactModalOpen: false,
     },
   },
   /**
