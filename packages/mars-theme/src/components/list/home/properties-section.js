@@ -17,9 +17,7 @@ const PropertiesSection = ({ state }) => {
             <MapImage
               src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/-96.8018,33.1422,11.59,0/1095x365@2x?access_token=${map_token}`}
             ></MapImage>
-            <ButtonImage src="https://wp.sankalprealty.us/wp-content/uploads/2020/12/view-properties.svg">
-
-            </ButtonImage>
+            <Link link="/our-properties"><ButtonImage src="https://wp.sankalprealty.us/wp-content/uploads/2020/12/view-properties.svg" /></Link>
           </ContentContainer>
         {/* </ScrollAnimation> */}
       </SectionContainer>

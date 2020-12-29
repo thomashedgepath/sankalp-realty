@@ -47,10 +47,10 @@ const Footer = (props) => {
             <p>
             <span style={{ color: "#FECB65", textTransform: "uppercase" }}>Reach Us:</span><br/>
             </p>
-            <SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/facebook.svg"} />
-            <SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/LinkedIn.svg"} />
-            <SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/youtube.svg"} />
-            <SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/email.svg"} />
+            <Link link="https://www.linkedin.com/company/sankalp-realty-us"><SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/LinkedIn.svg"} /></Link>
+            <Link link="https://www.youtube.com/channel/UC89YkukgRJcQUO3_4jo7-zQ"><SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/youtube.svg"} /></Link>
+            <Link link="https://www.facebook.com/sankalprealtyus"><SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/facebook.svg"} /></Link>
+            <a href="mailto:info@sankalprealty.us"><SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/email.svg"} /></a>
 
             
           </div>
