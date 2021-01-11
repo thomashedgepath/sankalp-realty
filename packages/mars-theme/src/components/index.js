@@ -13,6 +13,7 @@ import Locations from "./properties-page/locations";
 import Products from "./services-page/services";
 import { footerHeight } from "../components/footer";
 import ContactFormModal from "../components/contact-form-modal";
+import ContactPage from './contact-page/contact.js'
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -58,6 +59,7 @@ const Theme = ({ state }) => {
           <Main key={"main-container"}>
             <Switch>
               <Locations when={data.link === "/our-properties/"} />
+              <ContactPage when={data.link === "/contact/"} />
               <Products when={data.link === "/services/"} />
               <Loading when={data.isFetching} />
               <List when={data.isArchive} />
@@ -234,7 +236,7 @@ const HeadContainer = styled.div`
 const Main = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-top: 100px;
+  
   justify-content: center;
   background-image: linear-gradient(
     180deg,
@@ -242,14 +244,15 @@ const Main = styled.div`
     rgba(66, 174, 228, 0)
   );
 
-  @media (max-width: 768px) {
+  ${'' /* @media (max-width: 768px) {
     margin-top: 60px;
-  }
+  } */}
 `;
 
 // Padding Bottom for Content Wrap needs to match footer height in footer.js
 const ContentWrap = styled.div`
   padding-bottom: ${footerHeight};
+  padding-top:12vh;
 
   @media (max-width: 768px) {
     padding-bottom: 60vh;

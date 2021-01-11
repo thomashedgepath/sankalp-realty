@@ -93,8 +93,8 @@ const SectionContainer = styled.div`
 
 const ContentContainer = styled.div`
   display: grid;
-  grid-template-columns: 50vw 50vw;
-  justify-content: space-evenly;
+  grid-template-columns: 40vw 40vw;
+  justify-content: center;
 
   color: #007a0f;
 
@@ -137,9 +137,11 @@ const RContent = styled(LContent)`
 `;
 
 const ProductImage = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 20vw;
+  height: auto;
   object-fit: cover;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
+  margin: 2vh 0;
 
   @media (max-width: 768px) {
     height: 40vh;

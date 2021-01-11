@@ -1,23 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect, styled, decode } from "frontity";
-import TextField from '@material-ui/core/TextField';
-
-
+import TextField from "@material-ui/core/TextField";
+import jsonp from "jsonp";
+import queryString from "query-string";
+import * as EmailValidator from "email-validator";
 
 const EmailSignup = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
 
+  const [email, setEmail] = useState("test@email.com");
+
+  const handleEmailChange = (event) => {
+    event.preventDefault();
+    setEmail(event.target.value);
+  };
+
+  const subscribeToNewsLetter = (event) => {
+    event.preventDefault();
+    const formData = {
+      EMAIL: email,
+    };
+
+    if (EmailValidator.validate(email) === true) {
+      // jsonp(
+      //   `https://cannabisdepot.us7.list-manage.com/subscribe/post?u=5a1a6958c1c712881d728ba59&amp;id=bfa1d55dfb&${queryString.stringify(formData)}`,
+      //   { param: "c" },
+      //   (err, data) => {
+      //     console.log("err:", err);
+      //     console.log("data:", data);
+      //   }
+      // );
+      alert("Thanks for joining our mailing list!");
+    
+    } else {
+      alert("Try again. That email is invalid.");
+    };
+  };
+
   return (
     <>
-     <SectionContainer key={"email-signup-section"}>
-       <ContentContainer>
-       North Texas is growing fast. Join our mailing list to stay up to date.
-        </ContentContainer>
-        <InputContainer>
-            <EmailInputField id="outlined-basic" fullWidth label="Enter your email to sign up!" variant="outlined" />
-        </InputContainer>
-     </SectionContainer>
+      <SectionContainer key={"email-signup-section"}>
+        <EmailForm>
+          <SignupLabel>
+          North Texas is growing fast. Join our mailing list to stay up to date.
+          </SignupLabel>
+          <EmailInputField
+            error
+            id="outlined-basic"
+            as="input"
+            label="Enter your email for updates."
+            variant="outlined"
+            onChange={handleEmailChange}
+          />
+          
+          <SubmitButtonMain onClick={subscribeToNewsLetter}>
+            Join Now!
+          </SubmitButtonMain>
+        </EmailForm>
+      </SectionContainer>
     </>
   );
 };
@@ -25,48 +66,88 @@ const EmailSignup = ({ state }) => {
 export default connect(EmailSignup);
 
 const EmailInputField = styled(TextField)`
-    display: inline-block;
-    background-color: #F1F5F2;
-    border-radius: 5px !important;
-`
-const InputContainer = styled.div`
-    padding: 10px 10%;
-    margin: 0 0 20px 0;
+  background-color: #f1f5f2;
+  border-radius: 5px !important;
+  display: inline-block;
+  width: 50%;
 
-    @media (max-width: 768px) {
-        padding: 10px 10%;
-    }
-`
+  @media (max-width: 768px) {
+    width: 95%;
+  }
+`;
+const EmailForm = styled.form`
+  margin: 1.5vh;
+
+  @media (max-width: 768px) {
+    padding: 10px 10%;
+  }
+`;
 
 const SectionContainer = styled.div`
-    position: relative;
-    overflow: hidden;
-    flex-wrap: none;
-    background-color: #2B4F77;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
-    z-index: 1000;
+  background-color: #2B4F77;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
+  flex-wrap: none;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 1000;
+`;
 
+const SignupLabel = styled.h2`
+  color: #F3F3F3;
+  display: block;
+  font-family: 'Overpass', sans-serif;
+  font-size: 2.5vw;
+  letter-spacing: -1.98px;
+  margin: 0;
+  padding: 0px 0 5px;
+  text-align: center;
+  text-transform: uppercase;
 
-`
+  @media (max-width: 768px) {
+    font-size: 6vw;
+    letter-spacing: -0.5px;
+  }
+`;
+const SubmitButtonMain = styled.button`
+  -webkit-tap-highlight-color: transparent;
+  background-color: #6369d1;
+  border-color: #6369d1;
+  border-radius: 4px;
+  border-style: solid;
+  border: 2px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.00938em;
+  line-height: 1.1876em;
+  margin: 0 10px;
+  outline: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  user-select: none;
+  vertical-align: center;
+  width: auto;
+  padding: 18.5px;
+  display: inline-flex;
+  
 
-const ContentContainer = styled.div`
-    display: block;
-    
-    font-size: 2.5vw;
-    color: #F3F3F3;
-    text-transform: uppercase;
-    margin: 0px;
-    padding: 20px 0 5px 0;
-    font-family: 'Overpass', sans-serif;
-    letter-spacing: -1.98px;
+  &:hover {
+    background-color: #3f51b5;
+    border-color: #3f51b5;
+  }
+  @media (max-width: 768px) {
+    margin: 10px 0;
+  }
 
-    @media (max-width: 768px) {
-        font-size: 6vw;
-        letter-spacing: -0.5px;
-    }
-    
-
-`
+`;

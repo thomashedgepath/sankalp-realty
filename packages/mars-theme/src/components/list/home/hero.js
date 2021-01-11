@@ -90,9 +90,9 @@ const PageHero = styled.div`
   position: relative;
   overflow: hidden;
   background-color: black;
-  width: 100%;
+  width: 100vw;
   height: 70vh;
-  margin: 30px 0 0 0;
+  
 
   @media (max-width: 768px) {
     height: 95vh;
@@ -105,6 +105,7 @@ const PageHero = styled.div`
 const BackgroundVideo = styled.video`
   position: absolute;
   object-fit: cover;
+  object-position: 0 0;
   top: 0;
   right: 0;
   bottom: 0;
@@ -127,10 +128,10 @@ const BackgroundVideoContent = styled.div`
   position: relative;
   align: center;
   text-align: left;
-  width: 80%;
+  width: 60vw;
   left: 0px;
   top: 0px;
-  padding: 20vh 10%;
+  padding: 20vh 20vw;
 
   @media (max-width: 768px) {
     text-align: left;

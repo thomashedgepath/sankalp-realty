@@ -10,7 +10,7 @@ const Header = ({ state, libraries }) => {
 
   return (
     <>
-      {console.log(state.source)}
+      {/* {console.log(state.source)} */}
 
       <HeaderContainer elevation={1}>
         <StyledToolbar>
@@ -31,42 +31,42 @@ const Header = ({ state, libraries }) => {
 export default connect(Header);
 
 const HeaderContainer = styled.header`
-  font-size: 0.875rem;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 400;
-  line-height: 1.43;
-  letter-spacing: 0.01071em;
-  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-  width: 100%;
-  display: flex;
-  z-index: 1100;
-  box-sizing: border-box;
-  flex-shrink: 0;
-  flex-direction: column;
-  top: 0;
-  left: auto;
-  right: 0;
-  position: fixed;
-  color: #fff;
   background-color: #1f4e4a;
   border-bottom: 10px solid #f79837;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  left: auto;
+  letter-spacing: 0.01071em;
+  line-height: 1.43;
+  height: 12vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  width: 100%;
+  z-index: 1100;
 `;
 const StyledToolbar = styled.div`
-  font-size: 0.875rem;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 400;
-  line-height: 1.43;
-  letter-spacing: 0.01071em;
-  color: #fff;
-  box-sizing: inherit;
-  display: flex;
-  position: relative;
   align-items: center;
+  box-sizing: inherit;
+  color: #fff;
+  display: flex;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.01071em;
+  line-height: 1.43;
+  min-height: 100px;
   padding-left: 24px;
   padding-right: 24px;
-  min-height: 100px;
+  position: relative;
 
   @media (max-width: 768px) {
     padding-left: 0px;
@@ -74,9 +74,9 @@ const StyledToolbar = styled.div`
 `;
 
 const LogoContainer = styled.div`
-  width: auto;
   height: 100px;
   margin: 1em;
+  width: auto;
 
   @media (max-width: 768px) {
     height: 60px;
@@ -84,16 +84,16 @@ const LogoContainer = styled.div`
   }
 `;
 const Logo = styled.img`
-  width: 10vw;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
   max-width: 120px;
   min-width: 80px;
-  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
+  width: 10vw;
 `;
 
 const NavItem = styled.div`
-  margin: 0 0 0 0.8em;
   border-left: 1.5px solid #fff;
   height: 100%;
+  margin: 0 0 0 0.8em;
   width: auto;
 
   &:hover {
@@ -103,16 +103,16 @@ const NavItem = styled.div`
 
 const NavLink = styled.a`
   background-color: #000000;
-  margin-left: 0.4em;
   border: none;
-  font-size: 1.1em;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 700;
-  line-height: 1.75;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
   color: white;
   cursor: pointer;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.75;
+  margin-left: 0.4em;
+  text-transform: uppercase;
 
   &:hover {
     color: white;

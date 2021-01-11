@@ -15,16 +15,32 @@ const MainSection = ({ state, actions }) => {
               Trusted Experience. <br /> Trusted Insight.
             </PrimaryText>
             <SecondaryText>
-              We know what it takes to <span style={{fontFamily: 'Permanent Marker', color: "#4BA2AA"}}>get things done</span> in North Texas.
+              We know what it takes to{" "}
+              <span
+                style={{ fontFamily: "Permanent Marker", color: "#4BA2AA" }}
+              >
+                get things done
+              </span>{" "}
+              in North Texas.
             </SecondaryText>
-            <Button onClick={actions.theme.toggleContactModal} src="https://wp.sankalprealty.us/wp-content/uploads/2020/12/Start-Today.svg"></Button>
+            <Button
+              onClick={actions.theme.toggleContactModal}
+              src="https://wp.sankalprealty.us/wp-content/uploads/2020/12/Start-Today.svg"
+            ></Button>
             <PText>
               Every decision in Real Estate is a big decision. Wether you are
               leasing your first Retail storefront, building your 100th
               Industrial development, or looking for quality tenants to fill
               your new Office building our team will treat your project like our
-              own.<br/><br/>
-              Site Selection / Planning & Development  / Investment / Project Leasing / Tenant Representation
+              own.
+              <br />
+              <br />
+              <div style={{ textAlign: "center" }}>
+                <TextContainer color="#F79837">Site Selection</TextContainer> /
+                <TextContainer color="#0E9B49"> Buyer Representation</TextContainer> /
+                <TextContainer color="#333332"> Project Leasing</TextContainer> /
+                <TextContainer color="#2B4F77"> Investment Sales</TextContainer>
+              </div>
             </PText>
           </ScrollAnimation>
         </ContentContainer>
@@ -50,7 +66,6 @@ const ContentContainer = styled.div`
   text-align: center;
   font-weight: 400;
   padding: 5vh 15vw;
-  
 
   @media (max-width: 768px) {
     display: block;
@@ -61,10 +76,10 @@ const PrimaryText = styled.h1`
   text-align: left;
   font-family: "Overpass", sans-serif;
   font-size: 6vw;
-  color: #ACACAC;
+  color: #acacac;
   line-height: 8vh;
   letter-spacing: -0.5vw;
-  margin:0;
+  margin: 0;
 
   @media (max-width: 768px) {
     font-size: 6vw;
@@ -78,7 +93,7 @@ const SecondaryText = styled.h2`
   color: black;
   text-align: left;
   font-weight: 600;
-  margin:0;
+  margin: 0;
 
   @media (max-width: 768px) {
     font-size: 5.5vw;
@@ -103,10 +118,26 @@ const PText = styled.p`
 
 const Button = styled.img`
   width: 30vw;
-  margin: 5vh 0; 
+  margin: 5vh 0;
   cursor: pointer;
-  
-  &:hover{
+
+  &:hover {
     transform: scale(1.1);
+  }
+`;
+
+const TextContainer = styled.span`
+  ${"" /* text-transform: uppercase; */}
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  color: ${(props) => (props.color ? props.color : "#858585")};
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    display: inline;
+    font-size: 6vw;
+    letter-spacing: -0.5px;
   }
 `;

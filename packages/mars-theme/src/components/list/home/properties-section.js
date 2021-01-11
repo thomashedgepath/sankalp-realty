@@ -52,6 +52,7 @@ const ContentContainer = styled.div`
 
 const MapImage = styled.img`
   object-fit: cover;
+  width: 100%;
   opacity: 0.4;
   ${
     "" /* mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0)); */
