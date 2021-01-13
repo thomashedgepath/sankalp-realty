@@ -77,7 +77,7 @@ const PrimaryText = styled.h1`
   font-family: "Overpass", sans-serif;
   font-size: 6vw;
   color: #acacac;
-  line-height: 8vh;
+  line-height: 5vw;
   letter-spacing: -0.5vw;
   margin: 0;
 

@@ -17,6 +17,7 @@ const Products = ({ state }) => {
                   <ContentContainer key={product.slug}>
                     <LContent>
                       <ProductImage src={product.photo_url}></ProductImage>
+                      <Circle/>
                     </LContent>
                     <RContent>
                       <TextCard>
@@ -31,13 +32,15 @@ const Products = ({ state }) => {
                   <AnchorOffset id={product.slug} />
                   <ContentContainer key={product.slug}>
                     <LContent>
+                    
                       <TextCard>
                         <PrimaryText>{product.name}</PrimaryText>
                         <SecondaryText dangerouslySetInnerHTML={product} />
                       </TextCard>
+                      <Circle/>
                     </LContent>
                     <RContent>
-                      <ProductImage src={product.photo_url}></ProductImage>
+                      <ProductImage right src={product.photo_url}></ProductImage>
                     </RContent>
                   </ContentContainer>
                 </>
@@ -95,6 +98,7 @@ const ContentContainer = styled.div`
   display: grid;
   grid-template-columns: 40vw 40vw;
   justify-content: center;
+  
 
   color: #007a0f;
 
@@ -110,12 +114,13 @@ const ContentContainer = styled.div`
 
 const LContent = styled.div`
   grid-column-start: 1;
-
+  
   display: flex;
+  
 
   font-weight: 500;
   text-align: left;
-  font-size: 2vw;
+  font-size: 4vw;
 
   align-content: center;
   align-items: center;
@@ -131,6 +136,7 @@ const RContent = styled(LContent)`
   grid-column-start: 2;
   display: flex;
   background-color: none;
+  border-left: 4px solid #2B4F77;
 
   @media (max-width: 768px) {
   }
@@ -142,6 +148,9 @@ const ProductImage = styled.img`
   object-fit: cover;
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
   margin: 2vh 0;
+  
+  margin-left: ${(props) => (props.right ? "0" : "auto")};
+  
 
   @media (max-width: 768px) {
     height: 40vh;
@@ -151,11 +160,12 @@ const ProductImage = styled.img`
 const PrimaryText = styled.div`
   text-align: left;
   font-family: "Overpass", sans-serif;
-  font-size: 4vh;
+  font-size: 6vh;
   font-weight: 300;
   color: black;
-  letter-spacing: -1px;
+  letter-spacing: -3pt;
   margin: 10px;
+  line-height: 0.85;
 
   @media (max-width: 768px) {
     font-size: 5vh;
@@ -164,29 +174,36 @@ const PrimaryText = styled.div`
 `;
 
 const SecondaryText = styled(PrimaryText)`
-  font-size: 2vh;
+  font-size: 3vh;
   color: #858585;
   font-weight: 200;
+  line-height: 1.2;
+  letter-spacing: -1px;
 
   @media (max-width: 768px) {
     font-size: 5.5vw;
   }
 `;
 
-const Divider = styled.div`
-  width: 100%;
-  height: 2vw;
+const Circle = styled.div`
+      width: 20px;
+      height: 20px;
+      background: #2B4F77;
+      border-radius: 50%;
+      margin-left: auto;
+      margin-right: -12px;
+      right: 0;
 `;
 
 const TextCard = styled.div`
   text-align: center;
   font-size: 1.8vh;
   width: 80%;
-  background-color: white;
+  ${'' /* background-color: white; */}
   margin: 20px;
   border-radius: 20px;
   padding: 1vw;
-  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+  ${'' /* filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5)); */}
 
   @media (max-width: 768px) {
     margin: -10vh 0 10px 0;

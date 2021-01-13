@@ -5,7 +5,7 @@ export const product_data = [
     photo_url:
       "http://wp.sankalprealty.us/wp-content/uploads/2021/01/investment-strategy.svg",
     __html: `
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Our success comes from a deep understanding of our clients' goals. We work with investors of all types to plan and execute commercial real estate projects that meet their investment objectives.
             `,
   },
   {
@@ -14,52 +14,36 @@ export const product_data = [
     photo_url:
       "http://wp.sankalprealty.us/wp-content/uploads/2021/01/due-dilligance.svg",
     __html: `
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    We constantly track new development and market trends so you don't have to. Our team monitors the latest transactional data, demographics, and growth patterns to help you make informed decisions.
             `,
   },
   {
-    name: "Buyer Representation",
-    slug: "buyer-representation",
+    name: "Buyer / Seller Representation",
+    slug: "buyer-seller-representation",
     photo_url:
       "http://wp.sankalprealty.us/wp-content/uploads/2021/01/buyer-representation.svg",
     __html: `
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Making mistakes in a Real Estate transaction can be a costly experience. We work closely with buyers and sellers to negotiate contracts and ensure transactions are completed properly in our clients' best interests. 
             `,
   },
-  {
-    name: "Contract Negotiations",
-    slug: "contract-negotiations",
-    photo_url:
-      "http://wp.sankalprealty.us/wp-content/uploads/2021/01/contract-negotiations.svg",
-    __html: `
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            `,
-  },
+
   {
     name: "Project Leasing",
     slug: "project-leasing",
     photo_url:
       "http://wp.sankalprealty.us/wp-content/uploads/2021/01/project-leasing.svg",
     __html: `
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Maintaining constant cash flow in your property is crucial for your investment. We communicate with owners across the life of their investments to fill any vacancies with quality tenants that keep turnover low.
             `,
   },
-  {
-    name: "Property Valuation",
-    slug: "property-valuation",
-    photo_url:
-      "http://wp.sankalprealty.us/wp-content/uploads/2021/01/property-valuation.svg",
-    __html: `
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            `,
-  },
+
   {
     name: "Investment Sales",
     slug: "investment-sales",
     photo_url:
       "http://wp.sankalprealty.us/wp-content/uploads/2021/01/investment-sales.svg",
     __html: `
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    We utilize all the financial and market data available to create detailed and accurate valuations and aggressively market their assets to buyers.
             `,
   },
 ];

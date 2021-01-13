@@ -13,6 +13,7 @@ const ContactPage = ({ state, actions, libraries }) => {
               We know what it takes to <span style={{fontFamily: 'Permanent Marker', color: "#4BA2AA"}}>get things done</span> in North Texas.
             </SecondaryText> */}
           <PText>
+          <br/>
             Tell us a little about your project and how we can help you meet
             your real estate goals.
           </PText>
@@ -62,10 +63,10 @@ const PrimaryText = styled.h1`
   font-family: "Overpass", sans-serif;
   font-size: 6vw;
   color: #acacac;
-  line-height: 8vh;
-  letter-spacing: -0.5vw;
+  line-height: 9vh;
+  letter-spacing: -0.35vw;
   margin: 0;
-  
+
 
   @media (max-width: 768px) {
     font-size: 6vw;
@@ -93,6 +94,7 @@ const PText = styled.p`
   color: #000;
   margin: 2vh 0 0 0;
   line-height: 1;
+  letter-spacing: 0.35pt;
 
   @media (max-width: 768px) {
     font-size: 5.5vw;
