@@ -1,6 +1,7 @@
 import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
+import propertiesHandler from "./components/properties-handler";
 
 const marsTheme = {
   name: "@frontity/mars-theme",
@@ -32,6 +33,10 @@ const marsTheme = {
    */
   actions: {
     theme: {
+      init: ({ libraries }) => {
+        // Add the handler to wp-source.
+        libraries.source.handlers.push(propertiesHandler);
+      },
       beforeSSR: async ({ actions }) => {
         await actions.source.fetch("/contact");
       },

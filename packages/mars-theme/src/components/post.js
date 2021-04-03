@@ -31,6 +31,7 @@ const Post = ({ state, actions, libraries }) => {
   // Load the post, but only if the data is ready.
   return data.isReady ? (
     <Container>
+    {console.log(state.source)}
       <div>
 
         <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />

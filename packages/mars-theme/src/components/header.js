@@ -8,9 +8,10 @@ const Header = ({ state, libraries }) => {
   let logo_url =
     "https://wp.sankalprealty.us/wp-content/uploads/2020/12/sankalp-logo-1.svg";
 
+
   return (
     <>
-      {/* {console.log(state.source)} */}
+      
 
       <HeaderContainer elevation={1}>
         <StyledToolbar>

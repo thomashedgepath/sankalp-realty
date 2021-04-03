@@ -13,7 +13,8 @@ import Locations from "./properties-page/locations";
 import Products from "./services-page/services";
 import { footerHeight } from "../components/footer";
 import ContactFormModal from "../components/contact-form-modal";
-import ContactPage from './contact-page/contact.js'
+import ContactPage from './contact-page/contact.js';
+import Property from './property-page/property';
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -23,6 +24,14 @@ import ContactPage from './contact-page/contact.js'
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
+
+  const linkStartsWith = (linkRoot) => {
+    if (data.link.substring(0, linkRoot.length) === linkRoot){
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   return (
     <>
@@ -59,6 +68,7 @@ const Theme = ({ state }) => {
           <Main key={"main-container"}>
             <Switch>
               <Locations when={data.link === "/our-properties/"} />
+              <Property when={linkStartsWith("/property/")} /> 
               <ContactPage when={data.link === "/contact/"} />
               <Products when={data.link === "/services/"} />
               <Loading when={data.isFetching} />

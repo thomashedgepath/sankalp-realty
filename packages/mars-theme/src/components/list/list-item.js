@@ -2,6 +2,7 @@ import React from "react";
 import { connect, styled } from "frontity";
 import Link from "../link";
 import FeaturedMedia from "../featured-media";
+import PropertiesCard from '../properties-page/properties-card';
 
 /**
  * Item Component
@@ -12,43 +13,18 @@ import FeaturedMedia from "../featured-media";
  * - FeaturedMedia: the featured image/video of the post
  */
 const Item = ({ state, item }) => {
-  const author = state.source.author[item.author];
-  const date = new Date(item.date);
+  const data = item.acf 
 
   return (
-    <article>
-      <Link link={item.link}>
+    <div>
+    {console.log(data)}
+    {/* <Link link={item.link}>
         <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
-      </Link>
-
-      <div>
-        {/* If the post has an author, we render a clickable author text. */}
-        {author && (
-          <StyledLink link={author.link}>
-            <AuthorName>
-              By <b>{author.name}</b>
-            </AuthorName>
-          </StyledLink>
-        )}
-        <PublishDate>
-          {" "}
-          on <b>{date.toDateString()}</b>
-        </PublishDate>
-      </div>
-
-      {/*
-       * If the want to show featured media in the
-       * list of featured posts, we render the media.
-       */}
-      {state.theme.featured.showOnList && (
-        <FeaturedMedia id={item.featured_media} />
-      )}
-
-      {/* If the post has an excerpt (short summary text), we render it */}
-      {item.excerpt && (
-        <Excerpt dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
-      )}
-    </article>
+      </Link> */}
+    <PropertiesCard id={data.id} data={data}>
+     
+    </PropertiesCard>
+    </div>
   );
 };
 
@@ -64,21 +40,7 @@ const Title = styled.h1`
   box-sizing: border-box;
 `;
 
-const AuthorName = styled.span`
-  color: rgba(12, 17, 43, 0.9);
-  font-size: 0.9em;
-`;
-
-const StyledLink = styled(Link)`
-  padding: 15px 0;
-`;
-
-const PublishDate = styled.span`
-  color: rgba(12, 17, 43, 0.9);
-  font-size: 0.9em;
-`;
-
-const Excerpt = styled.div`
+const Card = styled.div`
   line-height: 1.6em;
   color: rgba(12, 17, 43, 0.8);
 `;
