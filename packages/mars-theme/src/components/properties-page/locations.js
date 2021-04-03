@@ -35,7 +35,7 @@ const Locations = ({ state, actions }) => {
           rel="stylesheet"
         />
       </Head>
-      {console.log(viewport)}
+      {/* {console.log(viewport)} */}
       
       <BrowserView>
         <SectionContainer key={"map-section"}>

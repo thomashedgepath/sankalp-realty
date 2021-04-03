@@ -11,7 +11,7 @@ const List = ({ state }) => {
 
   return (
     <>
-      {console.log(state.source)}
+      {/* {console.log(state.source)} */}
       {/* {console.log(state.router.link)} */}
       {/*If this is the homepage were gonna load something different*/}
       {data.isHome == true && <Home when={data.isHome == true} />}

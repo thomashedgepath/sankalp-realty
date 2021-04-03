@@ -23,7 +23,7 @@ const settings = {
             ],
             [
               "Our Properties",
-              "/our-properties/"
+              "/category/properties/"
             ],
             [
               "Contact",
