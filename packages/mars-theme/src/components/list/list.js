@@ -9,6 +9,8 @@ const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
 
+  const prop_coordinates = []
+
   return (
     <>
       {/* {console.log(state.source)} */}
@@ -21,19 +23,32 @@ const List = ({ state }) => {
         <>
           <PageContainer>
             <MapContainer>
-              <Locations></Locations>
+              <Locations prop_coordinates={prop_coordinates}></Locations>
             </MapContainer>
             <PropertyContainer>
               <ScrollBox>
+                
+                {/* {console.log(data.items)} */}
+                
                 {/* Iterate over the items of the list. */}
                 {data.items.map(({ type, id }) => {
                   const item = state.source[type][id];
+                  const lat = item.acf.address.lat;
+                  const lng = item.acf.address.lng;
+
                   // Render one Item component for each one.
                   {
-                    /* console.log(state.source.post[id].acf) */
+                    // Add each one to the coordinate list to pass to the Map component (Locations).
+                    prop_coordinates.push({
+                      id: id,
+                      lat: lat,
+                      lng: lng,
+                    }) 
+                    console.log(prop_coordinates)
                   }
                   return <Item key={item.id} item={item} />;
                 })}
+                
                 <Pagination />
               </ScrollBox>
             </PropertyContainer>

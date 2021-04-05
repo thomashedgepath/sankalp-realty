@@ -6,50 +6,55 @@ import Link from "../link";
 //const USER_TOKEN = "WgrBF3p7pdJqohqjxNyM"
 //const EMAIL = "thomas@careycoxcompany.com"
 
-const PropertiesCard = ({id, data}) => {
+const PropertiesCard = ({ id, data, link }) => {
   const ref = React.createRef();
   return (
     <>
-      <li key={`property-${id}`} id={`property-${id}`} ref={ref} style={{ margin: "10px" }}>
+      {console.log(link)}
+      <li
+        key={`property-${id}`}
+        id={`property-${id}`}
+        ref={ref}
+        style={{ margin: "10px" }}
+      >
         <PropertyPaper>
-          
-            <>
-              <CardContainer>
-                <CardImage
-                  src={data.images[1].url}
-                />
+          <>
+            <CardContainer>
+              <CardImage src={data.images[1].url} />
 
-                <CardContent>
-                  <div style={{ margin: "5px,0px,5px,0px" }}>
-                    <TagLabel size={"small"} color={"green"}>
-                      for sale
-                    </TagLabel>
+              <CardContent>
+                <div style={{ margin: "5px,0px,5px,0px" }}>
+                  <TagLabel size={"small"} color={"green"}>
+                    for sale
+                  </TagLabel>
 
-                    <TagLabel size={"small"}>test</TagLabel>
-                  </div>
+                  <TagLabel size={"small"}>test</TagLabel>
+                </div>
 
-                  <CardHeader>{data.property_name}</CardHeader>
-                  <CardAddress>{`${data.address.street_address}`}</CardAddress>
-                  <CardSubAddress>{`${data.address.city}, ${data.address.state} ${data.address.zip_code}`}</CardSubAddress>
+                <CardHeader>{data.property_name}</CardHeader>
+                <CardAddress>{`${data.address.street_address}`}</CardAddress>
+                <CardSubAddress>{`${data.address.city}, ${data.address.state} ${data.address.zip_code}`}</CardSubAddress>
 
-                  <div style={{ marginTop: "10px" }}>
-                    <p style={{ margin: "0px" }}>{`Total Available: ${data.availability.total_availability} ${data.availability.units}`}</p>
-                    <p id={"rates"} style={{ margin: "0px" }}>
-                      $12.00 psf
-                    </p>
+                <div style={{ marginTop: "10px" }}>
+                  <p
+                    style={{ margin: "0px" }}
+                  >{`Total Available: ${data.availability.total_availability} ${data.availability.units}`}</p>
+                  <p id={"rates"} style={{ margin: "0px" }}>
+                    $12.00 psf
+                  </p>
 
-                    <ButtonDiv>
-                      <Link href={``} passHref>
-                        <LinkButton color="blue">View more {"test"}</LinkButton>
-                      </Link>
+                  <ButtonDiv>
+                    <Link link={link} passHref>
+                      <LinkButton color="blue">View more {"test"}</LinkButton>
+                    </Link>
 
-                      <LinkButton color="orange">Contact Agent</LinkButton>
-                    </ButtonDiv>
-                  </div>
-                  <br />
-                </CardContent>
-              </CardContainer>
-            </>
+                    <LinkButton color="orange">Contact Agent</LinkButton>
+                  </ButtonDiv>
+                </div>
+                <br />
+              </CardContent>
+            </CardContainer>
+          </>
         </PropertyPaper>
       </li>
     </>
@@ -94,17 +99,21 @@ const PropertyPaper = styled.div`
   }
 `;
 const CardContainer = styled.div`
-  height: ;
-  width: 90%;
+  height: 250px;
+  width: 100%;
 `;
 const CardImage = styled.img`
   object-fit: cover;
-  width: 100%;
+  float: left;
+  width: 50%;
+  height: 110%;
+  margin: -5px;
 `;
 const CardContent = styled.div`
   overflow: hidden;
+  margin: 5px 5px 5px 52%;
+  width: 48%;
   grid-column-start: 2;
-  margin: 5px;
 `;
 const CardHeader = styled.h2`
   margin-top: 5px;
@@ -151,38 +160,42 @@ const LinkButton = styled.button`
   border-radius: 0.28571429rem;
   transition: background 0.1s ease;
   margin-left: 0;
-  ${'' /* background-color: ${(props) =>
+  ${
+    "" /* background-color: ${(props) =>
     props.color ? props.color : "red"} !important;
   border-color: ${(props) => (props.color ? props.color : "red")} !important;
   color: ${(props) =>
-    props.textColor ? props.textColor : "white"} !important; */}
+    props.textColor ? props.textColor : "white"} !important; */
+  }
   font-size: 0.78571429rem;
   text-transform: uppercase;
 `;
 
 const TagLabel = styled.div`
-    -webkit-font-smoothing: antialiased;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    letter-spacing: 0.01071em;
-    text-align: left;
-    box-sizing: inherit;
-    display: inline-block;
-    line-height: 1;
-    vertical-align: baseline;
-    margin: 0 5px 5px 0;
-    background-image: none;
-    padding: 0.5833em 0.833em;
-    text-transform: none;
-    font-weight: 700;
-    border: 0 solid transparent;
-    border-radius: 0.28571429rem;
-    transition: background 0.1s ease;
-    margin-left: 0;
-    ${'' /* background-color: ${(props) =>
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  letter-spacing: 0.01071em;
+  text-align: left;
+  box-sizing: inherit;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: baseline;
+  margin: 0 5px 5px 0;
+  background-image: none;
+  padding: 0.5833em 0.833em;
+  text-transform: none;
+  font-weight: 700;
+  border: 0 solid transparent;
+  border-radius: 0.28571429rem;
+  transition: background 0.1s ease;
+  margin-left: 0;
+  ${
+    "" /* background-color: ${(props) =>
       props.color ? props.color : "gray"} !important;
     border-color: ${(props) => (props.color ? props.color : "gray")} !important;
     color: ${(props) =>
       props.textColor ? props.textColor : "white"} !important;
-    font-size: 0.78571429rem; */}
-    text-transform: uppercase;
+    font-size: 0.78571429rem; */
+  }
+  text-transform: uppercase;
 `;

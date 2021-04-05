@@ -2,28 +2,25 @@ import React from "react";
 import { connect, styled } from "frontity";
 import Link from "../link";
 import FeaturedMedia from "../featured-media";
-import PropertiesCard from '../properties-page/properties-card';
+import PropertiesCard from "../properties-page/properties-card";
 
 /**
  * Item Component
  *
- * It renders the preview of a blog post. Each blog post contains
- * - Title: clickable title of the post
- * - Author: name of author and published date
- * - FeaturedMedia: the featured image/video of the post
- */
+ * It renders the preview of a blog post (property).
+ **/
+
 const Item = ({ state, item }) => {
-  const data = item.acf 
+  const data = item.acf;
 
   return (
     <div>
-    {console.log(data)}
-    {/* <Link link={item.link}>
-        <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
-      </Link> */}
-    <PropertiesCard id={data.id} data={data}>
-     
-    </PropertiesCard>
+      {/* {console.log(item)} */}
+      <PropertiesCard
+        id={data.id}
+        data={data}
+        link={item.link}
+      ></PropertiesCard>
     </div>
   );
 };

@@ -8,16 +8,9 @@ import { BrowserView, MobileView } from "react-device-detect";
 import PropertiesSidebar from "./properties-sidebar";
 import PropertiesCard from "./properties-card";
 
-const Locations = ({ state, actions }) => {
-
+const Locations = ({ prop_coordinates }) => {
   const accessToken =
     "pk.eyJ1IjoidGhvbWFzaGVkZ2VwYXRoIiwiYSI6ImNqNW83cXhsYjQyYnAyd25xbjdwbG1xbmoifQ.u8oSi903x7-iK9S0-lNuNg";
-
-  const coordinates = {
-    id: "store-1",
-    lat: 33.114177,
-    lng: -96.808943,
-  };
 
   const [viewport, setViewport] = useState({
     latitude: 33.16620971214782,
@@ -35,17 +28,8 @@ const Locations = ({ state, actions }) => {
           rel="stylesheet"
         />
       </Head>
-      {/* {console.log(viewport)} */}
-      
       <BrowserView>
         <SectionContainer key={"map-section"}>
-          {/* <DarkenOverlay></DarkenOverlay>
-        <InfoContainer>
-          <h1>Under construction.</h1>
-          <p>Our website is still under construction. <br/>While you wait for us to finish, you can view our properties on CREXi.</p>
-          <a href="https://www.crexi.com/properties?brokerage=Sankalp%20Realty" style={{color: "blue"}}>View our listings on CREXi.</a>
-          <br/><br/>
-        </InfoContainer> */}
           <MapGL
             {...viewport}
             width="100%"
@@ -54,7 +38,10 @@ const Locations = ({ state, actions }) => {
             onViewportChange={(nextViewport) => setViewport(nextViewport)}
             mapboxApiAccessToken={accessToken}
           >
-            <MapMarker coordinates={coordinates} />
+            {/* Iterate through all properties on the page to create map markers from given coordinates. */}
+            {prop_coordinates.map(({ id, lat, lng }) => {
+              return <MapMarker key={id} coordinates={[lat, lng]} />;
+            })}
           </MapGL>
         </SectionContainer>
       </BrowserView>
