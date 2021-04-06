@@ -67,8 +67,8 @@ const Theme = ({ state }) => {
         <ContentWrap>
           <Main key={"main-container"}>
             <Switch>
-              <Locations when={data.link === "/our-properties/"} />
-              <Property when={linkStartsWith("/property/")} /> 
+              {/* {console.log(data)} */}
+              <Property when={linkStartsWith("/properties/")} /> 
               <ContactPage when={data.link === "/contact/"} />
               <Products when={data.link === "/services/"} />
               <Loading when={data.isFetching} />

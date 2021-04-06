@@ -8,9 +8,10 @@ import Link from "../link";
 
 const PropertiesCard = ({ id, data, link }) => {
   const ref = React.createRef();
+
   return (
     <>
-      {console.log(link)}
+      {console.log(data)}
       <li
         key={`property-${id}`}
         id={`property-${id}`}
@@ -20,16 +21,34 @@ const PropertiesCard = ({ id, data, link }) => {
         <PropertyPaper>
           <>
             <CardContainer>
+              {/* Property Image */}
               <CardImage src={data.images[1].url} />
 
               <CardContent>
-                <div style={{ margin: "5px,0px,5px,0px" }}>
-                  <TagLabel size={"small"} color={"green"}>
-                    for sale
-                  </TagLabel>
+                <TagContainer>
+                  {/* Tags for property status (sale / lease) */}
+                  {data.status.for_sale ? (
+                    <>
+                      {console.log("true")}
+                      <TagLabel size={"small"} color={"green"}>
+                        For Sale
+                      </TagLabel>
+                    </>
+                  ) : (
+                    <>{console.log("false")}</>
+                  )}
 
-                  <TagLabel size={"small"}>test</TagLabel>
-                </div>
+                  {data.status.for_lease ? (
+                    <>
+                      {console.log("true")}
+                      <TagLabel size={"small"} color={"blue"}>
+                        For Lease
+                      </TagLabel>
+                    </>
+                  ) : (
+                    <>{console.log("false")}</>
+                  )}
+                </TagContainer>
 
                 <CardHeader>{data.property_name}</CardHeader>
                 <CardAddress>{`${data.address.street_address}`}</CardAddress>
@@ -160,15 +179,19 @@ const LinkButton = styled.button`
   border-radius: 0.28571429rem;
   transition: background 0.1s ease;
   margin-left: 0;
-  ${
-    "" /* background-color: ${(props) =>
-    props.color ? props.color : "red"} !important;
+  background-color: ${(props) => props.color ? props.color : "red"} !important;
   border-color: ${(props) => (props.color ? props.color : "red")} !important;
-  color: ${(props) =>
-    props.textColor ? props.textColor : "white"} !important; */
-  }
+  color: ${(props) => props.textColor ? props.textColor : "white"} !important;
   font-size: 0.78571429rem;
   text-transform: uppercase;
+
+  &:hover {
+    transform: scale(1);
+    transform-origin: center center;
+    transition: all 0.2s ease-in-out;
+
+    box-shadow: -3px 0 1px 0 rgba(0, 0, 0, 0.25);
+  }
 `;
 
 const TagLabel = styled.div`
@@ -178,7 +201,7 @@ const TagLabel = styled.div`
   text-align: left;
   box-sizing: inherit;
   display: inline-block;
-  line-height: 1;
+  line-height: 0.6;
   vertical-align: baseline;
   margin: 0 5px 5px 0;
   background-image: none;
@@ -189,13 +212,15 @@ const TagLabel = styled.div`
   border-radius: 0.28571429rem;
   transition: background 0.1s ease;
   margin-left: 0;
-  ${
-    "" /* background-color: ${(props) =>
-      props.color ? props.color : "gray"} !important;
-    border-color: ${(props) => (props.color ? props.color : "gray")} !important;
-    color: ${(props) =>
-      props.textColor ? props.textColor : "white"} !important;
-    font-size: 0.78571429rem; */
-  }
   text-transform: uppercase;
+  background-color: ${(props) => props.color ? props.color : "gray"} !important;
+  border-color: ${(props) => (props.color ? props.color : "gray")} !important;
+  color: ${(props) => props.textColor ? props.textColor : "white"} !important;
+  font-size: 0.78571429rem;
 `;
+
+const TagContainer = styled.div`
+  margin: 5px 0 10px 0;
+
+`;
+

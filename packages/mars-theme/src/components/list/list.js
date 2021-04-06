@@ -44,7 +44,7 @@ const List = ({ state }) => {
                       lat: lat,
                       lng: lng,
                     }) 
-                    console.log(prop_coordinates)
+                    {/* console.log(prop_coordinates) */}
                   }
                   return <Item key={item.id} item={item} />;
                 })}

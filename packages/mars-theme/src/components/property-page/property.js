@@ -28,7 +28,7 @@ const Property = ({ state, actions }) => {
       
       {console.log(state.source)}
       <p>{state.router.link}</p>
-      <button onClick={handleClick}>Fucker</button>
+      <button onClick={handleClick}>test</button>
     </>
   );
 };
