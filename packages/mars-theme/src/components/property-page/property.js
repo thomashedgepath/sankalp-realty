@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
 import List from "../list";
 import list from "../list/list";
+import KeyFacts from "./key_facts";
+import ImageSection from "./image_section";
+import PricingSection from "./pricing_section";
 
 const Property = ({ state, actions }) => {
   // Get information about the current URL.
@@ -20,49 +23,16 @@ const Property = ({ state, actions }) => {
     List.preload();
   }, []);
 
-  // For converting JSON Keys to Human Readable text
-  function toCapitalizedWords(name) {
-    var words = name.match(/[A-Za-z][a-z]*/g) || [];
-
-    return words.map(capitalize).join(" ");
-  }
-
-  function capitalize(word) {
-    return word.charAt(0).toUpperCase() + word.substring(1);
-  }
-
-  // Sorting and Organizing Key Facts Section for Display
-  const key_facts = data.key_facts;
-  let table = [];
-
-  for (const [key, value] of Object.entries(key_facts)) {
-    // console.log(key);
-    let section = [];
-    const section_title = toCapitalizedWords(key);
-
-    const subsection = value;
-    let items = [];
-
-    for (const [sub_key, sub_value] of Object.entries(subsection)) {
-      if (sub_value !== "" && sub_value !== false) {
-        const item_name = toCapitalizedWords(sub_key);
-        items.push([[item_name, sub_value]]);
-        //console.log(section);
-      }
-    }
-    if (items.length > 0) {
-      section = [section_title, items];
-      table.push(section);
-    }
-  }
-
   // Load the post, but only if the data is ready.
   return (
     <>
-      {console.log(post)}
       {console.log(data)}
       <ContentContainer>
+        <h1>Images</h1>
+        <ImageSection data={data.images}></ImageSection>
+
         <h1>Headers</h1>
+        <p>{data.property_name}</p>
         <p>{data.headers.primary}</p>
         <p>{data.headers.secondary}</p>
 
@@ -71,36 +41,41 @@ const Property = ({ state, actions }) => {
           {`${data.address.street_address} ${data.address.city}, ${data.address.state} ${data.address.zip_code}`}
         </p>
 
+        <h1>Listing Type</h1>
+        <p>
+          {/* this could be multiple values need to map */}
+          {`${data.listing_type[0]}`}
+        </p>
+
+        <h1>Status</h1>
+        {data.status.for_sale ? <>For Sale</> : <></>}
+        {data.status.for_lease ? <>For Lease</> : <></>}
+
         <h1>Availability</h1>
-        <p>Max Contig: {data.availability.max_contig}</p>
-        <p>Min Divisible: {data.availability.min_divisible}</p>
         <p>
           Total Availability: {data.availability.total_availability}{" "}
           {data.availability.units}
         </p>
+        <p>Max Contig: {data.availability.max_contig}</p>
+        <p>Min Divisible: {data.availability.min_divisible}</p>
+
+        <h1>Pricing</h1>
+        <PricingSection data={data.pricing} status={data.status}></PricingSection>
+
+        <h1>Video</h1>
+
+        <h1>Brochure</h1>
+        <a href={data.brochure.link} target="_blank" rel="noopener noreferrer">
+          Brochure
+        </a>
+
+        <h1>Description</h1>
+        <div
+          dangerouslySetInnerHTML={{ __html: data.property_description }}
+        ></div>
 
         <h1>Key Facts</h1>
-
-        {table.map((item) => {
-          var section_heading = item[0];
-          var section_data = item[1];
-
-          return (
-            <>
-              <h3>{section_heading}</h3>
-
-              {section_data.map((item) => {
-                var attribute_name = item[0][0];
-                var attribute_value = item[0][1];
-                return (
-                  <p>
-                    {attribute_name}: {attribute_value}
-                  </p>
-                );
-              })}
-            </>
-          );
-        })}
+        <KeyFacts data={data.key_facts}></KeyFacts>
       </ContentContainer>
     </>
   );
