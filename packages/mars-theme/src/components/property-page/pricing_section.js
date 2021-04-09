@@ -18,6 +18,7 @@ function PricingSection({ data, status }) {
   return (
     <>
       {/* {console.log(data)} */}
+      {/*  Move logic to display this section out of the render: hide price || all rates = 0  */}
       {status.hide_price ? (
         <>Call for Current Pricing</>
       ) : (
