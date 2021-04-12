@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect, styled, Head } from "frontity";
-import MapGL from "react-map-gl";
+import MapGL, {NavigationControl} from "react-map-gl";
 import MapMarker from "./map-marker";
 import Link from "../link";
 
@@ -38,6 +38,7 @@ const Locations = ({ prop_coordinates }) => {
             onViewportChange={(nextViewport) => setViewport(nextViewport)}
             mapboxApiAccessToken={accessToken}
           >
+          <NavControls/>
             {/* Iterate through all properties on the page to create map markers from given coordinates. */}
             {prop_coordinates.map(({ id, lat, lng }) => {
               return <MapMarker key={id} coordinates={[lat, lng]} />;
@@ -59,6 +60,12 @@ const Locations = ({ prop_coordinates }) => {
 
 export default connect(Locations);
 
+const NavControls = styled(NavigationControl)`
+  position: relative;
+  float: right;
+  margin: 10px;
+`
+
 const SectionContainer = styled.div`
   position: relative;
   overflow: hidden;
@@ -69,7 +76,7 @@ const SectionContainer = styled.div`
   background-color: #f1f5f2;
 
   @media (max-width: 768px) {
-    display: block;x
+    display: block;
   }
 `;
 const ScrollingContainer = styled.div`
@@ -266,8 +273,7 @@ const LinkButton = styled.button`
     border-radius: 0.28571429rem;
     transition: background 0.1s ease;
     margin-left: 0;
-    background-color: ${(props) =>
-      props.color ? props.color : "red"} !important;
+    background-color: ${(props) => props.color ? props.color : "red"} !important;
     border-color: ${(props) => (props.color ? props.color : "red")} !important;
     color: ${(props) =>
       props.textColor ? props.textColor : "white"} !important;
