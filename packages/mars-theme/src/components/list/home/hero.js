@@ -126,6 +126,7 @@ const BackgroundVideo = styled.video`
 
 const BackgroundVideoContent = styled.div`
   position: relative;
+  box-sizing: initial;
   align: center;
   text-align: left;
   width: 60vw;

@@ -13,8 +13,9 @@ import Locations from "./properties-page/locations";
 import Products from "./services-page/services";
 import { footerHeight } from "../components/footer";
 import ContactFormModal from "../components/contact-form-modal";
-import ContactPage from './contact-page/contact.js';
-import Property from './property-page/property';
+import ContactPage from "./contact-page/contact.js";
+import Property from "./property-page/property";
+import semanticUIStyles from 'semantic-ui-css/semantic.min.css';
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -26,12 +27,12 @@ const Theme = ({ state }) => {
   const data = state.source.get(state.router.link);
 
   const linkStartsWith = (linkRoot) => {
-    if (data.link.substring(0, linkRoot.length) === linkRoot){
+    if (data.link.substring(0, linkRoot.length) === linkRoot) {
       return true;
     } else {
       return false;
     }
-  }
+  };
 
   return (
     <>
@@ -44,7 +45,9 @@ const Theme = ({ state }) => {
 
       {/* Add some global styles for the whole site, like body or a's. 
       Not classes here because we use CSS-in-JS. Only global HTML tags. */}
+      <Global styles={css(semanticUIStyles)} />
       <Global styles={globalStyles} />
+     
 
       {/* Conditions must be met for contact modal */}
       <PageContainer>
@@ -68,7 +71,7 @@ const Theme = ({ state }) => {
           <Main key={"main-container"}>
             <Switch>
               {/* {console.log(data)} */}
-              <Property when={linkStartsWith("/properties/")} /> 
+              <Property when={linkStartsWith("/properties/")} />
               <ContactPage when={data.link === "/contact/"} />
               <Products when={data.link === "/services/"} />
               <Loading when={data.isFetching} />
@@ -94,10 +97,9 @@ const globalStyles = css`
     @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
   }
   body {
-    margin: 0;
-    font-size: 1em;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0 !important;
+    font-size: 1em !important;
+    font-family: 'Overpass', sans-serif;
   }
   a,
   a:visited {
@@ -107,7 +109,11 @@ const globalStyles = css`
   .text {
     min-height: 0vw;
   }
-
+  h1, h2, h3, h4, h5 {
+    font-family: 'Overpass', sans-serif;
+    margin-top: 20px;
+  }
+  
   .wpcf7-textarea {
     appearance: none;
     background-color: #fff;
@@ -246,7 +252,7 @@ const HeadContainer = styled.div`
 const Main = styled.div`
   display: flex;
   flex-wrap: wrap;
-  
+
   justify-content: center;
   background-image: linear-gradient(
     180deg,
@@ -254,7 +260,7 @@ const Main = styled.div`
     rgba(66, 174, 228, 0)
   );
 
-  ${'' /* @media (max-width: 768px) {
+  ${"" /* @media (max-width: 768px) {
     margin-top: 60px;
   } */}
 `;
@@ -262,7 +268,7 @@ const Main = styled.div`
 // Padding Bottom for Content Wrap needs to match footer height in footer.js
 const ContentWrap = styled.div`
   padding-bottom: ${footerHeight};
-  padding-top:12vh;
+  padding-top: 12vh;
 
   @media (max-width: 768px) {
     padding-bottom: 60vh;
