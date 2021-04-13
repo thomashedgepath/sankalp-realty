@@ -136,24 +136,23 @@ const Property = ({ state, actions }) => {
               )}
             </Table>
 
-            <Divider horizontal>
-              <Header as="h4">Pricing</Header>
-            </Divider>
-
             <PricingSection
               data={data.pricing}
               status={data.status}
             ></PricingSection>
 
-            <Button>
-              <a
-                href={data.brochure.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Brochure
-              </a>
-            </Button>
+            <Divider horizontal />
+            <ButtonContainer>
+              <Button>
+                <a
+                  href={data.brochure.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Brochure
+                </a>
+              </Button>
+            </ButtonContainer>
           </MainContent>
         </SideColumn>
       </ContentContainer>
@@ -214,6 +213,14 @@ const MainContent = styled.div`
   width: 100%;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0 10px 0;
 `;
 
 // Text Styles
