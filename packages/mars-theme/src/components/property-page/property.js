@@ -10,6 +10,8 @@ import MapMarker from "../properties-page/map-marker";
 import { Button, Divider, Header, Table } from "semantic-ui-react";
 import { TableCell } from "@material-ui/core";
 
+import ContactFormModal from "../contact-form-modal";
+
 const Property = ({ state, actions }) => {
   // Get information about the current URL.
   const url_data = state.source.get(state.router.link);
@@ -17,12 +19,17 @@ const Property = ({ state, actions }) => {
   const post = state.source[url_data.type][url_data.id];
   // Get the Property Attributes from the ACF fields
   const data = post.acf;
+  // Create single string for property address
+  const address_string = `${data.address.street_address} ${data.address.city}, ${data.address.state} ${data.address.zip_code}`
+  
+
   /**
    * Once the post has loaded in the DOM, prefetch both the
    * home posts and the list component so if the user visits
    * the home page, everything is ready and it loads instantly.
    */
   useEffect(() => {
+    actions.theme.updateCurrentProperty(address_string)
     actions.source.fetch("/");
     List.preload();
   }, []);
@@ -40,13 +47,14 @@ const Property = ({ state, actions }) => {
   // Load the post, but only if the data is ready.
   return (
     <>
-      {console.log(data)}
+      {}
+      
       <ContentContainer>
         <MainColumn>
           <MainContent>
             <div style={{ margin: "27px 0" }}>
               <PageHeader>{data.property_name}</PageHeader>
-              <Address>{`${data.address.street_address} ${data.address.city}, ${data.address.state} ${data.address.zip_code}`}</Address>
+              <Address>{address_string}</Address>
             </div>
 
             <ImageSection data={data.images}></ImageSection>
@@ -143,14 +151,18 @@ const Property = ({ state, actions }) => {
 
             <Divider horizontal />
             <ButtonContainer>
-              <Button>
+              <Button color="blue">
                 <a
                   href={data.brochure.link}
                   target="_blank"
                   rel="noopener noreferrer"
+
                 >
                   Brochure
                 </a>
+              </Button>
+              <Button color="orange" onClick={actions.theme.toggleContactModal}>
+                  Contact Agent
               </Button>
             </ButtonContainer>
           </MainContent>
