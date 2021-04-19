@@ -30,9 +30,6 @@ function PricingSection({ data, status }) {
 
   return (
     <>
-      {console.log(showSale)}
-      {console.log(showLease)}
-
       <>
         {/* For Sale Pricing Section */}
         {/* {showSale ? (<></>):(<>Call for Current Sale Price</>)} */}
@@ -42,11 +39,13 @@ function PricingSection({ data, status }) {
             <Divider horizontal>
               <Header as="h4">Sale Price</Header>
             </Divider>
-            {formatMoney(data.sale_price.min)}
-            {data.sale_price.max
-              ? ` - ${formatMoney(data.sale_price.max)} `
-              : " "}
-            {data.sale_price.label}
+            <CenterText>
+              {formatMoney(data.sale_price.min)}
+              {data.sale_price.max
+                ? ` - ${formatMoney(data.sale_price.max)} `
+                : " "}
+              {data.sale_price.label}
+            </CenterText>
           </>
         ) : (
           <>
@@ -55,7 +54,7 @@ function PricingSection({ data, status }) {
                 <Divider horizontal>
                   <Header as="h4">Sale Price</Header>
                 </Divider>
-                Call for Current Sale Prices
+                <CenterText>Call for Current Sale Prices</CenterText>
               </>
             ) : (
               <></>
@@ -74,11 +73,13 @@ function PricingSection({ data, status }) {
             <Divider horizontal>
               <Header as="h4">Lease Rates</Header>
             </Divider>
-            {formatMoney(data.lease_rate.min)}
-            {data.lease_rate.max
-              ? ` - ${formatMoney(data.lease_rate.max)} `
-              : " "}
-            {data.lease_rate.label}
+            <CenterText>
+              {formatMoney(data.lease_rate.min)}
+              {data.lease_rate.max
+                ? ` - ${formatMoney(data.lease_rate.max)} `
+                : " "}
+              {data.lease_rate.label}
+            </CenterText>
           </>
         ) : (
           <>
@@ -87,7 +88,7 @@ function PricingSection({ data, status }) {
                 <Divider horizontal>
                   <Header as="h4">Lease Rates</Header>
                 </Divider>
-                Call for Current Lease Rates
+                <CenterText>Call for Current Lease Rates</CenterText>
               </>
             ) : (
               <></>
@@ -108,4 +109,8 @@ const CardImage = styled.img`
   width: 250px;
   height: 250px;
   margin: -5px;
+`;
+
+const CenterText = styled.div`
+  text-align: center;
 `;
