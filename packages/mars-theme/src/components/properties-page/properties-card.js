@@ -2,23 +2,26 @@ import React from "react";
 import { connect, styled, Head } from "frontity";
 import { useEffect } from "react";
 import Link from "../link";
+import { Label, Button } from "semantic-ui-react";
 
 //const USER_TOKEN = "WgrBF3p7pdJqohqjxNyM"
 //const EMAIL = "thomas@careycoxcompany.com"
 
-const PropertiesCard = ({ id, data, link }) => {
-  const ref = React.createRef();
+const PropertiesCard = ({ data, prop_id, link, state, selected, actions }) => {
+  const ref = React.useRef();
+
+  useEffect(() => {
+    actions.theme.setSelectedPropertyAddress(
+      `${data.address.city}, ${data.address.state} ${data.address.zip_code}`
+    );
+  }, [state.theme.selectedPropertyID]);
 
   return (
     <>
-      {console.log(data)}
-      <li
-        key={`property-${id}`}
-        id={`property-${id}`}
-        ref={ref}
-        style={{ margin: "10px" }}
-      >
-        <PropertyPaper>
+      {/* {console.log(state.theme.selectedPropertyID)}
+      {console.log(prop_id)} */}
+      <li id={prop_id} ref={ref} style={{ margin: "10px" }}>
+        <PropertyPaper selected={selected}>
           <>
             <CardContainer>
               {/* Property Image */}
@@ -29,24 +32,22 @@ const PropertiesCard = ({ id, data, link }) => {
                   {/* Tags for property status (sale / lease) */}
                   {data.status.for_sale ? (
                     <>
-                      {console.log("true")}
-                      <TagLabel size={"small"} color={"green"}>
+                      <Label size={"small"} color={"green"}>
                         For Sale
-                      </TagLabel>
+                      </Label>
                     </>
                   ) : (
-                    <>{console.log("false")}</>
+                    <></>
                   )}
 
                   {data.status.for_lease ? (
                     <>
-                      {console.log("true")}
-                      <TagLabel size={"small"} color={"blue"}>
+                      <Label size={"small"} color={"blue"}>
                         For Lease
-                      </TagLabel>
+                      </Label>
                     </>
                   ) : (
-                    <>{console.log("false")}</>
+                    <></>
                   )}
                 </TagContainer>
 
@@ -59,15 +60,15 @@ const PropertiesCard = ({ id, data, link }) => {
                     style={{ margin: "0px" }}
                   >{`Total Available: ${data.availability.total_availability} ${data.availability.units}`}</p>
                   <p id={"rates"} style={{ margin: "0px" }}>
-                    $12.00 psf
+                    <br/><br/>
                   </p>
 
                   <ButtonDiv>
                     <Link link={link} passHref>
-                      <LinkButton color="blue">View more {"test"}</LinkButton>
+                      <Button color="blue">View More</Button>
                     </Link>
 
-                    <LinkButton color="orange">Contact Agent</LinkButton>
+                    <Button color="orange" onClick={actions.theme.toggleContactModal}>Contact Agent</Button>
                   </ButtonDiv>
                 </div>
                 <br />
@@ -98,10 +99,15 @@ const PropertyPaper = styled.div`
   max-width: 100%;
   color: rgba(0, 0, 0, 0.87);
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  background-color: #fff;
+  background-color: white;
   border-radius: 4px;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: ${(props) =>
+    props.selected
+      ? "-3px 0 1px 0 rgba(255, 0, 0, 0.4), 0 -3px 1px 0 rgba(255, 0, 0, 0.4), 3px 0 1px 0 rgba(255, 0, 0, 0.4), 0 3px 1px 0 rgba(255, 0, 0, 0.4)"
+      : "0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)"};
+
+  border-left: ${(props) =>
+    props.selected ? "5px solid rgba(144, 41, 35, 0.9)" : "none"} !important;
 
   &:hover {
     transform: scale(1);
@@ -179,9 +185,10 @@ const LinkButton = styled.button`
   border-radius: 0.28571429rem;
   transition: background 0.1s ease;
   margin-left: 0;
-  background-color: ${(props) => props.color ? props.color : "red"} !important;
+  background-color: ${(props) =>
+    props.color ? props.color : "red"} !important;
   border-color: ${(props) => (props.color ? props.color : "red")} !important;
-  color: ${(props) => props.textColor ? props.textColor : "white"} !important;
+  color: ${(props) => (props.textColor ? props.textColor : "white")} !important;
   font-size: 0.78571429rem;
   text-transform: uppercase;
 
@@ -213,14 +220,13 @@ const TagLabel = styled.div`
   transition: background 0.1s ease;
   margin-left: 0;
   text-transform: uppercase;
-  background-color: ${(props) => props.color ? props.color : "gray"} !important;
+  background-color: ${(props) =>
+    props.color ? props.color : "gray"} !important;
   border-color: ${(props) => (props.color ? props.color : "gray")} !important;
-  color: ${(props) => props.textColor ? props.textColor : "white"} !important;
+  color: ${(props) => (props.textColor ? props.textColor : "white")} !important;
   font-size: 0.78571429rem;
 `;
 
 const TagContainer = styled.div`
   margin: 5px 0 10px 0;
-
 `;
-

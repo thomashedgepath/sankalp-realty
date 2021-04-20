@@ -15,7 +15,7 @@ const ContactFormModal = ({ state, actions, libraries }) => {
             onClick={actions.theme.toggleContactModal}
             src="https://wp.sankalprealty.us/wp-content/uploads/2020/12/clear-black-18dp.svg"
           ></CloseButton>
-
+          <h3>Let us know about your project.</h3>
           <ContactForm />
         </ContentContainer>
       </ModalContainer>
@@ -35,7 +35,7 @@ const ModalContainer = styled.div`
   margin: auto auto;
   z-index: 1200;
   background-color: #dfdfdf;
-  width: 80vw;
+  width: 40vw;
   height: 80vh;
   text-align: center;
   border-radius: 20px;

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect, styled, Head } from "frontity";
-import MapGL, {NavigationControl} from "react-map-gl";
+import MapGL, { NavigationControl } from "react-map-gl";
 import MapMarker from "./map-marker";
 import Link from "../link";
 
@@ -8,17 +8,27 @@ import { BrowserView, MobileView } from "react-device-detect";
 import PropertiesSidebar from "./properties-sidebar";
 import PropertiesCard from "./properties-card";
 
-const Locations = ({ prop_coordinates }) => {
+const Locations = ({ prop_coordinates, state, actions }) => {
   const accessToken =
     "pk.eyJ1IjoidGhvbWFzaGVkZ2VwYXRoIiwiYSI6ImNqNW83cXhsYjQyYnAyd25xbjdwbG1xbmoifQ.u8oSi903x7-iK9S0-lNuNg";
 
   const [viewport, setViewport] = useState({
-    latitude: 33.16620971214782,
-    longitude: -96.79046653119435,
+    latitude: parseFloat(state.theme.selectedPropertyCoordinates[0]),
+    longitude: parseFloat(state.theme.selectedPropertyCoordinates[1]),
     zoom: 11.2,
     bearing: 0,
     pitch: 0,
   });
+
+  useEffect(() => {
+    setViewport({
+      latitude: parseFloat(state.theme.selectedPropertyCoordinates[0]),
+      longitude: parseFloat(state.theme.selectedPropertyCoordinates[1]),
+      zoom: viewport.zoom,
+      bearing: viewport.bearing,
+      pitch: viewport.bearing,
+    });
+  }, [state.theme.selectedPropertyCoordinates]);
 
   return (
     <>
@@ -38,10 +48,10 @@ const Locations = ({ prop_coordinates }) => {
             onViewportChange={(nextViewport) => setViewport(nextViewport)}
             mapboxApiAccessToken={accessToken}
           >
-          <NavControls/>
+            <NavControls />
             {/* Iterate through all properties on the page to create map markers from given coordinates. */}
             {prop_coordinates.map(({ id, lat, lng }) => {
-              return <MapMarker key={id} coordinates={[lat, lng]} />;
+              return <MapMarker prop_id={id} coordinates={[lat, lng]} />;
             })}
           </MapGL>
         </SectionContainer>
@@ -64,7 +74,7 @@ const NavControls = styled(NavigationControl)`
   position: relative;
   float: right;
   margin: 10px;
-`
+`;
 
 const SectionContainer = styled.div`
   position: relative;
@@ -273,7 +283,8 @@ const LinkButton = styled.button`
     border-radius: 0.28571429rem;
     transition: background 0.1s ease;
     margin-left: 0;
-    background-color: ${(props) => props.color ? props.color : "red"} !important;
+    background-color: ${(props) =>
+      props.color ? props.color : "red"} !important;
     border-color: ${(props) => (props.color ? props.color : "red")} !important;
     color: ${(props) =>
       props.textColor ? props.textColor : "white"} !important;

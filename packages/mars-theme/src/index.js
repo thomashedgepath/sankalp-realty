@@ -25,6 +25,9 @@ const marsTheme = {
         showOnPost: false,
       },
       isContactModalOpen: false,
+      selectedPropertyID: 0,
+      selectedPropertyCoordinates: [33.16620971214782, -96.79046653119435],
+      selectedPropertyAddress: "",
     },
   },
   /**
@@ -48,6 +51,18 @@ const marsTheme = {
       },
       toggleContactModal: ({ state }) => {
         state.theme.isContactModalOpen = !state.theme.isContactModalOpen;
+      },
+      setSelectedPropertyID: ({ state }) => (prop_id) => {
+        state.theme.selectedPropertyID = prop_id;
+    
+      },
+      setSelectedPropertyCoordinates: ({ state }) => (coordinates) => {
+        state.theme.selectedPropertyCoordinates = coordinates;
+        
+      },
+      setSelectedPropertyAddress: ({ state }) => (address) => {
+        state.theme.selectedPropertyAddress = address;
+        
       },
     },
   },

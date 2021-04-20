@@ -10,16 +10,23 @@ import PropertiesCard from "../properties-page/properties-card";
  * It renders the preview of a blog post (property).
  **/
 
-const Item = ({ state, item }) => {
+const Item = ({ prop_id, item, selected }) => {
   const data = item.acf;
+
+  const onClickHandler = ({actions}) => {
+    actions.theme.setSelectedPropertyID(prop_id)
+    actions.theme.setSelectedPropertyCoordinates(coordinates)
+  }
 
   return (
     <div>
       {/* {console.log(item)} */}
       <PropertiesCard
-        id={data.id}
+        selected={selected}
+        prop_id={prop_id}
         data={data}
         link={item.link}
+        onclick={onClickHandler}
       ></PropertiesCard>
     </div>
   );

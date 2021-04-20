@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect, styled, decode } from "frontity";
 import Item from "./list-item";
 import Pagination from "./pagination";
 import Home from "./home/home";
 import Locations from "../properties-page/locations";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const List = ({ state }) => {
   // Get the data of the current list.
-  const data = state.source.get(state.router.link);
-
-  const prop_coordinates = []
+  var data = state.source.get(state.router.link);
+  const prop_coordinates = [];
 
   return (
     <>
@@ -27,28 +27,33 @@ const List = ({ state }) => {
             </MapContainer>
             <PropertyContainer>
               <ScrollBox>
-                
-                {/* {console.log(data.items)} */}
-                
+                {state.theme.selectedPropertyID !== 0 && (<>
+                  <Item
+                    selected={true}
+                    prop_id={state.theme.selectedPropertyID}
+                    item={state.source["post"][state.theme.selectedPropertyID]}
+                  />
+                 
+                <hr></hr>
+                </>
+                )}
                 {/* Iterate over the items of the list. */}
                 {data.items.map(({ type, id }) => {
                   const item = state.source[type][id];
                   const lat = item.acf.address.lat;
                   const lng = item.acf.address.lng;
+                  // Add each one to the coordinate list to pass to the Map component (Locations).
+                  prop_coordinates.push({
+                    id: id,
+                    lat: lat,
+                    lng: lng,
+                  });
 
-                  // Render one Item component for each one.
-                  {
-                    // Add each one to the coordinate list to pass to the Map component (Locations).
-                    prop_coordinates.push({
-                      id: id,
-                      lat: lat,
-                      lng: lng,
-                    }) 
-                    {/* console.log(prop_coordinates) */}
+                  if (id !== state.theme.selectedPropertyID) {
+                    // Render one Item component for each one.
+                    return <Item prop_id={item.id} item={item} />;
                   }
-                  return <Item key={item.id} item={item} />;
                 })}
-                
                 <Pagination />
               </ScrollBox>
             </PropertyContainer>
@@ -80,8 +85,8 @@ const PropertyContainer = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
 
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   /* Chrome Safari Opera */
   ::-webkit-scrollbar {
     display: none;

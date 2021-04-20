@@ -7,10 +7,7 @@ import ImageSection from "./image_section";
 import PricingSection from "./pricing_section";
 import MapGL, { NavigationControl } from "react-map-gl";
 import MapMarker from "../properties-page/map-marker";
-import { Button, Divider, Header, Table } from "semantic-ui-react";
-import { TableCell } from "@material-ui/core";
-
-import ContactFormModal from "../contact-form-modal";
+import { Button, Divider, Header, Table, Label, Icon } from "semantic-ui-react";
 
 const Property = ({ state, actions }) => {
   // Get information about the current URL.
@@ -20,8 +17,7 @@ const Property = ({ state, actions }) => {
   // Get the Property Attributes from the ACF fields
   const data = post.acf;
   // Create single string for property address
-  const address_string = `${data.address.street_address} ${data.address.city}, ${data.address.state} ${data.address.zip_code}`
-  
+  const address_string = `${data.address.street_address} ${data.address.city}, ${data.address.state} ${data.address.zip_code}`;
 
   /**
    * Once the post has loaded in the DOM, prefetch both the
@@ -29,7 +25,6 @@ const Property = ({ state, actions }) => {
    * the home page, everything is ready and it loads instantly.
    */
   useEffect(() => {
-    actions.theme.updateCurrentProperty(address_string)
     actions.source.fetch("/");
     List.preload();
   }, []);
@@ -48,11 +43,33 @@ const Property = ({ state, actions }) => {
   return (
     <>
       {}
-      
+
       <ContentContainer>
         <MainColumn>
           <MainContent>
-            <div style={{ margin: "27px 0" }}>
+            <div style={{ margin: "15px 0" }}>
+              <TagContainer>
+                {/* Tags for property status (sale / lease) */}
+                {data.status.for_sale ? (
+                  <>
+                    <Label size={"large"} color={"green"}>
+                      For Sale
+                    </Label>
+                  </>
+                ) : (
+                  <></>
+                )}
+
+                {data.status.for_lease ? (
+                  <>
+                    <Label size={"large"} color={"blue"}>
+                      For Lease
+                    </Label>
+                  </>
+                ) : (
+                  <></>
+                )}
+              </TagContainer>
               <PageHeader>{data.property_name}</PageHeader>
               <Address>{address_string}</Address>
             </div>
@@ -92,20 +109,7 @@ const Property = ({ state, actions }) => {
         <SideColumn>
           <MainContent>
             <div style={{ margin: "27px 0", textAlign: "center" }}>
-              <SidebarHeader>
-                {data.status.for_sale ? (
-                  <>{`${data.listing_type[0]} `}For Sale</>
-                ) : (
-                  <></>
-                )}
-              </SidebarHeader>
-              <SidebarHeader>
-                {data.status.for_lease ? (
-                  <>{`${data.listing_type[0]} `}For Lease</>
-                ) : (
-                  <></>
-                )}
-              </SidebarHeader>
+              <SidebarHeader>Listing Info</SidebarHeader>
             </div>
 
             <Divider horizontal>
@@ -149,20 +153,33 @@ const Property = ({ state, actions }) => {
               status={data.status}
             ></PricingSection>
 
-            <Divider horizontal />
+            <Divider horizontal>
+            <Header as="h4">Listing Agent</Header>
+            </Divider>
+
+            <CenterText><br/><Address>Mukesh Parna</Address>
+            mp@sankalprealty.us<br/>
+            (469) 712-6773<br/><br/>
+
+            </CenterText>
             <ButtonContainer>
-              <Button color="blue">
+              <Button
+                fluid
+                color="orange"
+                onClick={actions.theme.toggleContactModal}
+              >
+                Contact Us
+              </Button>
+              </ButtonContainer>
+              <ButtonContainer>
+              <Button fluid color="blue">
                 <a
                   href={data.brochure.link}
                   target="_blank"
                   rel="noopener noreferrer"
-
                 >
                   Brochure
                 </a>
-              </Button>
-              <Button color="orange" onClick={actions.theme.toggleContactModal}>
-                  Contact Agent
               </Button>
             </ButtonContainer>
           </MainContent>
@@ -280,4 +297,12 @@ const NavControls = styled(NavigationControl)`
   position: relative;
   float: right;
   margin: 10px;
+`;
+
+const TagContainer = styled.div`
+  margin: 0 0 10px 0;
+`;
+
+const CenterText = styled.div`
+  text-align: center;
 `;
