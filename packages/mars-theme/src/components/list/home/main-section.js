@@ -25,21 +25,19 @@ const MainSection = ({ state, actions }) => {
             </SecondaryText>
             <Button
               onClick={actions.theme.toggleContactModal}
-              src="https://wp.sankalprealty.us/wp-content/uploads/2020/12/Start-Today.svg"
+              src="http://wp.sankalprealty.us/wp-content/uploads/2021/04/Start_outlines.svg"
             ></Button>
             <PText>
               Every decision in Real Estate is a big decision. Wether you are
-              leasing your first Retail storefront, building your 100th
-              Industrial development, or looking for quality tenants to fill
-              your new Office building our team will treat your project like our
+              looking for an Investment Property, development ready land, or AG land our team will treat your goals like our
               own.
               <br />
               <br />
               <div style={{ textAlign: "center" }}>
-                <TextContainer color="#F79837">Site Selection</TextContainer> /
-                <TextContainer color="#0E9B49"> Buyer Representation</TextContainer> /
-                <TextContainer color="#333332"> Project Leasing</TextContainer> /
-                <TextContainer color="#2B4F77"> Investment Sales</TextContainer>
+                <TextContainer color="#F79837"> <a href={`/services#site-selection`}>Site Selection</a></TextContainer> /
+                <TextContainer color="#0E9B49"> <a href={`/services#buyer-seller-representation`}>Buyer & Seller Representation</a></TextContainer> /
+                <TextContainer color="#333332"> <a href={`/services#investment-sales`}>Investment Properties</a></TextContainer> /
+                <TextContainer color="#2B4F77"> <a href={`/services#large-lands`}>Large Project Lands</a></TextContainer>
               </div>
             </PText>
           </ScrollAnimation>
