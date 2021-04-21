@@ -9,58 +9,133 @@ const Footer = (props) => {
   return (
     <>
       <SectionContainer key={"footer-section"}>
-       {console.log("Preview Deployment")}
+        {console.log("Preview Deployment")}
         <ContentContainer>
           <Column1>
             <Logo src={logo_url} />
           </Column1>
           <Column2>
-          <div style={{margin: "0 10px 0 10px"}}> 
-            <p>
-              <span style={{ color: "#FECB65", textTransform: "uppercase" }}>Address:</span>
-              <br />
-              <Link link="https://goo.gl/maps/4V61qdsbij9Ptvu16">
-              8668 John Hickman Pkwy, Suite 906<br/>
-              Frisco, TX 75034
-              </Link>
-              <br />
-              <br />
-              <span style={{ color: "#FECB65", textTransform: "uppercase" }}>Phone:</span>
-              <br />
-              (469) 712-6773
-              <br />
-            </p>
-          </div>
+            <div style={{ margin: "0 10px 0 10px" }}>
+              <p>
+                <span style={{ color: "#FECB65", textTransform: "uppercase" }}>
+                  Address:
+                </span>
+                <br />
+                <Link link="https://goo.gl/maps/4V61qdsbij9Ptvu16">
+                  8668 John Hickman Pkwy, Suite 906
+                  <br />
+                  Frisco, TX 75034
+                </Link>
+                <br />
+                <br />
+                <span style={{ color: "#FECB65", textTransform: "uppercase" }}>
+                  Phone:
+                </span>
+                <br />
+                (469) 712-6773
+                <br />
+              </p>
+            </div>
           </Column2>
           <Column3>
-          <div style={{margin: "0 10px 0 10px"}}>
-            <p><span style={{ color: "#FECB65", textTransform: "uppercase" }}>Our Services:</span><br/> 
-            <a href={`/services#site-selection`}>Site Selection</a> <br /> <a href={`/services#buyer-seller-representation`}>Buyer & Seller Representation</a>  <br /> <a href={`/services#investment-sales`}>Investment Properties</a> <br /><a href={`/services#large-lands`}>Large Project Lands</a> <br /> 
-            
-            </p>
-
-            
-          </div>
+            <div style={{ margin: "0 10px 0 10px" }}>
+              <p>
+                <span style={{ color: "#FECB65", textTransform: "uppercase" }}>
+                  Our Services:
+                </span>
+                <br />
+                <a href={`/services#site-selection`}>Site Selection</a><br />
+                <a href={`/services#buyer-seller-representation`}>Buyer & Seller Representation</a><br />
+                <a href={`/services#investment-sales`}>Investment Properties</a><br />
+                <a href={`/services#large-lands`}>Large Project Lands</a> <br />
+              </p>
+            </div>
           </Column3>
           <Column4>
-          <div style={{margin: "0 10px 0 10px"}}>
-            <p>
-            <span style={{ color: "#FECB65", textTransform: "uppercase" }}>Reach Us:</span><br/>
-            </p>
-            <Link link="https://www.linkedin.com/company/sankalp-realty-us"><SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/LinkedIn.svg"} /></Link>
-            <Link link="https://www.youtube.com/channel/UC89YkukgRJcQUO3_4jo7-zQ"><SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/youtube.svg"} /></Link>
-            <Link link="https://www.facebook.com/sankalprealtyus"><SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/facebook.svg"} /></Link>
-            <a href="mailto:mp@sankalprealty.us"><SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/email.svg"} /></a>
-
-            
-          </div>
+            <div style={{ margin: "0 10px 0 10px" }}>
+              <p>
+                <span style={{ color: "#FECB65", textTransform: "uppercase" }}>
+                  Reach Us:
+                </span>
+                <br />
+              </p>
+              <Link link="https://www.linkedin.com/company/sankalp-realty-us">
+                <SocialIcon
+                  src={
+                    "https://wp.sankalprealty.us/wp-content/uploads/2020/12/LinkedIn.svg"
+                  }
+                />
+              </Link>
+              <Link link="https://www.youtube.com/channel/UC89YkukgRJcQUO3_4jo7-zQ">
+                <SocialIcon
+                  src={
+                    "https://wp.sankalprealty.us/wp-content/uploads/2020/12/youtube.svg"
+                  }
+                />
+              </Link>
+              <Link link="https://www.facebook.com/sankalprealtyus">
+                <SocialIcon
+                  src={
+                    "https://wp.sankalprealty.us/wp-content/uploads/2020/12/facebook.svg"
+                  }
+                />
+              </Link>
+              <a href="mailto:mp@sankalprealty.us">
+                <SocialIcon
+                  src={
+                    "https://wp.sankalprealty.us/wp-content/uploads/2020/12/email.svg"
+                  }
+                />
+              </a>
+            </div>
           </Column4>
         </ContentContainer>
         <DisclaimerContainer>
-          <DisclaimerText style={{textAlign: "center", color: "white", fontWeight: "500", textTransform: "uppercase"}}><Link link={'https://wp.sankalprealty.us/wp-content/uploads/2020/12/TREC_CPN.pdf'}>Texas Real Estate Commission Consumer Protection Notice</Link> |  <Link link={'https://wp.sankalprealty.us/wp-content/uploads/2020/12/IABS-MP.pdf'}>Texas Real Estate Commission Information About Brokerage Services</Link><br/><br/><br/></DisclaimerText>
-          <DisclaimerText style={{textAlign: "left"}}>© 2020 Sankalp Realty, LLC   |   Website by LocalBrokerMarketing<br/></DisclaimerText>
-          <DisclaimerText> The information contained herein was obtained from sources believed reliable; however, Sankalp Realty LLC makes no guarantees, warranties or representations as to the completeness or accuracy thereof. The information contained in this website is submitted subject to errors, omissions, change of price or conditions, prior sale or lease, or withdrawal without notice. </DisclaimerText>
-          <DisclaimerText>Product name, logos, brands, and other trademarks featured or referred to in this website are the property of their respective trademark holders.</DisclaimerText>
+          <DisclaimerText
+            style={{
+              textAlign: "center",
+              color: "white",
+              fontWeight: "500",
+              textTransform: "uppercase",
+            }}
+          >
+            <Link
+              link={
+                "https://wp.sankalprealty.us/wp-content/uploads/2020/12/TREC_CPN.pdf"
+              }
+            >
+              Texas Real Estate Commission Consumer Protection Notice
+            </Link>{" "}
+            |{" "}
+            <Link
+              link={
+                "https://wp.sankalprealty.us/wp-content/uploads/2020/12/IABS-MP.pdf"
+              }
+            >
+              Texas Real Estate Commission Information About Brokerage Services
+            </Link>
+            <br />
+            <br />
+            <br />
+          </DisclaimerText>
+          <DisclaimerText style={{ textAlign: "left" }}>
+            © 2020 Sankalp Realty, LLC | Website by LocalBrokerMarketing
+            <br />
+          </DisclaimerText>
+          <DisclaimerText>
+            {" "}
+            The information contained herein was obtained from sources believed
+            reliable; however, Sankalp Realty LLC makes no guarantees,
+            warranties or representations as to the completeness or accuracy
+            thereof. The information contained in this website is submitted
+            subject to errors, omissions, change of price or conditions, prior
+            sale or lease, or withdrawal without notice.{" "}
+          </DisclaimerText>
+          <DisclaimerText>
+            Product name, logos, brands, and other trademarks featured or
+            referred to in this website are the property of their respective
+            trademark holders.
+          </DisclaimerText>
         </DisclaimerContainer>
       </SectionContainer>
     </>
@@ -69,25 +144,24 @@ const Footer = (props) => {
 
 export default connect(Footer);
 
-
 // Main SectionContainer for the footer needs to match the bottom padding height from index.js
-// Set footer height to automatically change both variables. 
-export const footerHeight = "50vh"
+// Set footer height to automatically change both variables.
+export const footerHeight = "50vh";
 
 const SectionContainer = styled.div`
   position: absolute;
   bottom: 0;
   overflow: hidden;
   flex-wrap: none;
-  background-color: #1F4E4A;
+  background-color: #1f4e4a;
 
   height: ${footerHeight};
   width: 100%;
   text-align: center;
 
   @media (max-width: 768px) {
-      height: 60vh;
-    }
+    height: 60vh;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -96,9 +170,9 @@ const ContentContainer = styled.div`
   justify-content: space-evenly;
   justify-items: center;
   text-align: center;
-  border-top: 10px solid #F79837;
+  border-top: 10px solid #f79837;
   color: #007a0f;
-  font-family: 'Overpass', sans-serif;
+  font-family: "Overpass", sans-serif;
 
   @media (max-width: 768px) {
     letter-spacing: -0.5px;
@@ -107,13 +181,12 @@ const ContentContainer = styled.div`
   }
 `;
 
-
-const Logo = styled.img` 
-    width: 10vw;
-    max-width: 80px;
-    min-width:60px;
-    margin: 1vw 2vw 1vw 3vw;
-    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
+const Logo = styled.img`
+  width: 10vw;
+  max-width: 80px;
+  min-width: 60px;
+  margin: 1vw 2vw 1vw 3vw;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
 
   @media (max-width: 768px) {
     width: 40vw;
@@ -132,27 +205,25 @@ const SocialIcon = styled.img`
   margin: 5px 5px 0 0;
 
   @media (max-width: 768px) {
-      width: 10vw;
-      border-radius: 11vw;
-      height: auto;
-      margin: .7vw;
-    }
-
+    width: 10vw;
+    border-radius: 11vw;
+    height: auto;
+    margin: 0.7vw;
+  }
 `;
 
- const DisclaimerText = styled.p`
-  color: #ACACAC;
+const DisclaimerText = styled.p`
+  color: #acacac;
   text-align: left;
   font-weight: 200;
   font-size: min(1.25vw, 12px);
-
- `
- const DisclaimerContainer = styled.div`
+`;
+const DisclaimerContainer = styled.div`
   padding: 5vh 10vw;
- `
+`;
 
 const Column1 = styled.div`
-  ${'' /* background-color: #007a0f; */}
+  ${"" /* background-color: #007a0f; */}
   color: #fff;
   display: flex;
   align-content: center;
@@ -160,24 +231,22 @@ const Column1 = styled.div`
   justify-content: center;
 
   @media (max-width: 768px) {
-      width: 100vw;
-      text-align: center;
-      align-content: center;
-      align-items: center;
-      justify-content: center;
-
-    }
+    width: 100vw;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 const Column2 = styled.div`
-  ${'' /* background-color: #1e5436; */}
-  
+  ${"" /* background-color: #1e5436; */}
+
   height: auto;
   display: flex;
   align-content: left;
   align-items: left;
   justify-content: left;
   width: min(30vw, 300px);
-
 
   font-size: min(1.25vw, 16px);
   color: #f1f5f2;
@@ -186,18 +255,17 @@ const Column2 = styled.div`
   font-weight: 300;
 
   @media (max-width: 768px) {
-      font-size: 4vw;
-      width: 100vw;
-      text-align: left;
-      align-content: left;
-      align-items: left;
-      justify-content: left;
-
-    }
+    font-size: 4vw;
+    width: 100vw;
+    text-align: left;
+    align-content: left;
+    align-items: left;
+    justify-content: left;
+  }
 `;
 const Column3 = styled.div`
-  ${'' /* background-color: #e39100; */}
-  
+  ${"" /* background-color: #e39100; */}
+
   height: auto;
   display: flex;
   align-content: left;
@@ -205,26 +273,25 @@ const Column3 = styled.div`
   justify-content: left;
   width: min(30vw, 250px);
 
-  font-size: min(1.25vw, 16px);;
+  font-size: min(1.25vw, 16px);
   color: #f1f5f2;
   letter-spacing: -0.88px;
   text-align: left;
   font-weight: 300;
 
   @media (max-width: 768px) {
-      font-size: 4vw;
-      width: 100vw;
-      text-align: left;
-      align-content: left;
-      align-items: left;
-      justify-content: left;
-    }
-  
+    font-size: 4vw;
+    width: 100vw;
+    text-align: left;
+    align-content: left;
+    align-items: left;
+    justify-content: left;
+  }
 `;
 
 const Column4 = styled.div`
-  ${'' /* background-color: #e39100; */}
-  
+  ${"" /* background-color: #e39100; */}
+
   height: auto;
   display: flex;
   align-content: left;
@@ -232,19 +299,18 @@ const Column4 = styled.div`
   justify-content: left;
   width: min(30vw, 280px);
 
-  font-size: min(1.25vw, 16px);;
+  font-size: min(1.25vw, 16px);
   color: #f1f5f2;
   letter-spacing: -0.88px;
   text-align: left;
   font-weight: 300;
 
   @media (max-width: 768px) {
-      font-size: 4vw;
-      width: 100vw;
-      text-align: left;
-      align-content: left;
-      align-items: left;
-      justify-content: left;
-    }
-  
+    font-size: 4vw;
+    width: 100vw;
+    text-align: left;
+    align-content: left;
+    align-items: left;
+    justify-content: left;
+  }
 `;
