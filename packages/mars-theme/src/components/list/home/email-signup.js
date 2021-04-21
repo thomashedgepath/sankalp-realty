@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { connect, styled, decode } from "frontity";
+import { connect, styled, decode, Head } from "frontity";
 import TextField from "@material-ui/core/TextField";
 import jsonp from "jsonp";
 import queryString from "query-string";
@@ -23,27 +23,28 @@ const EmailSignup = ({ state }) => {
     };
 
     if (EmailValidator.validate(email) === true) {
-      // jsonp(
-      //   `https://cannabisdepot.us7.list-manage.com/subscribe/post?u=5a1a6958c1c712881d728ba59&amp;id=bfa1d55dfb&${queryString.stringify(formData)}`,
-      //   { param: "c" },
-      //   (err, data) => {
-      //     console.log("err:", err);
-      //     console.log("data:", data);
-      //   }
-      // );
-      alert("Thanks for joining our mailing list!");
-    
+      window.Email.send({
+        SecureToken: "839e0b3b-0e7f-4245-8b52-f56c8d0de489", //SecureToken for login credentials generated on smtpjs.com
+        To: "mp@sankalprealty.us",
+        From: `${email}`,
+        Subject: "New Email Subscriber",
+        Body: `Please add ${email} to the mailing list.`,
+      }).then(alert("Thanks for joining our mailing list!"));
     } else {
       alert("Try again. That email is invalid.");
-    };
+    }
   };
 
   return (
     <>
+      <Head>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+      </Head>
       <SectionContainer key={"email-signup-section"}>
         <EmailForm>
           <SignupLabel>
-          North Texas is growing fast. Join our mailing list to stay up to date.
+            North Texas is growing fast. Join our mailing list to stay up to
+            date.
           </SignupLabel>
           <EmailInputField
             error
@@ -53,9 +54,9 @@ const EmailSignup = ({ state }) => {
             variant="outlined"
             onChange={handleEmailChange}
           />
-          
+
           <SubmitButtonMain onClick={subscribeToNewsLetter}>
-            Join Now!
+            Submit
           </SubmitButtonMain>
         </EmailForm>
       </SectionContainer>
@@ -84,7 +85,7 @@ const EmailForm = styled.form`
 `;
 
 const SectionContainer = styled.div`
-  background-color: #2B4F77;
+  background-color: #2b4f77;
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
   flex-wrap: none;
   height: 100%;
@@ -96,9 +97,9 @@ const SectionContainer = styled.div`
 `;
 
 const SignupLabel = styled.h2`
-  color: #F3F3F3;
+  color: #f3f3f3;
   display: block;
-  font-family: 'Overpass', sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 2.5vw;
   letter-spacing: -1.98px;
   margin: 0;
@@ -140,7 +141,6 @@ const SubmitButtonMain = styled.button`
   width: auto;
   padding: 18.5px;
   display: inline-flex;
-  
 
   &:hover {
     background-color: #3f51b5;
@@ -149,5 +149,4 @@ const SubmitButtonMain = styled.button`
   @media (max-width: 768px) {
     margin: 10px 0;
   }
-
 `;
