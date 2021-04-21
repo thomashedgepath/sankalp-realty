@@ -28,12 +28,13 @@ export const product_data = [
   },
 
   {
-    name: "Project Leasing",
-    slug: "project-leasing",
+    name: "Large Project Lands",
+    slug: "large-lands",
     photo_url:
       "http://wp.sankalprealty.us/wp-content/uploads/2021/01/project-leasing.svg",
     __html: `
-    Maintaining constant cash flow in your property is crucial for your investment. We communicate with owners across the life of their investments to fill any vacancies with quality tenants that keep turnover low.
+    Large development projects require a thorough due diligence on Zoning, Infrastructure and demand.
+    Extensive research, data, and development experience is required to take a project through the feasibility analysis stage. We help with all aspects to make it as easy as possible for the buyer during the feasibility period of the contract
             `,
   },
 

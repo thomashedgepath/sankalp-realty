@@ -154,13 +154,17 @@ const Property = ({ state, actions }) => {
             ></PricingSection>
 
             <Divider horizontal>
-            <Header as="h4">Listing Agent</Header>
+              <Header as="h4">Listing Agent</Header>
             </Divider>
 
-            <CenterText><br/><Address>Mukesh Parna</Address>
-            mp@sankalprealty.us<br/>
-            (469) 712-6773<br/><br/>
-
+            <CenterText>
+              <br />
+              <Address>Mukesh Parna</Address>
+              mp@sankalprealty.us
+              <br />
+              (469) 712-6773
+              <br />
+              <br />
             </CenterText>
             <ButtonContainer>
               <Button
@@ -170,18 +174,35 @@ const Property = ({ state, actions }) => {
               >
                 Contact Us
               </Button>
-              </ButtonContainer>
-              <ButtonContainer>
-              <Button fluid color="blue">
-                <a
-                  href={data.brochure.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Brochure
-                </a>
-              </Button>
             </ButtonContainer>
+
+            {data.brochure.link !== "" && (
+              <ButtonContainer>
+                <Button fluid color="blue">
+                  <a
+                    href={data.brochure.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Brochure
+                  </a>
+                </Button>
+              </ButtonContainer>
+            )}
+
+            {data.video_link !== "" && (
+              <ButtonContainer>
+                <Button fluid color="red">
+                  <a
+                    href={data.video_link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Video Link
+                  </a>
+                </Button>
+              </ButtonContainer>
+            )}
           </MainContent>
         </SideColumn>
       </ContentContainer>

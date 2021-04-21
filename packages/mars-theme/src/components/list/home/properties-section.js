@@ -31,10 +31,10 @@ const SectionContainer = styled.div`
   position: relative;
   overflow: hidden;
   flex-wrap: none;
-  height: 40vh;
+  height: 60vh;
   width: 100vw;
   text-align: center;
-  z-index: 1000;
+  z-index: 900;
 `;
 
 const ContentContainer = styled.div`
