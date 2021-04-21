@@ -35,7 +35,7 @@ const Footer = (props) => {
           <Column3>
           <div style={{margin: "0 10px 0 10px"}}>
             <p><span style={{ color: "#FECB65", textTransform: "uppercase" }}>Our Services:</span><br/> 
-            Site Selection <br /> Planning & Development  <br /> Investment <br /> Project Leasing <br /> Tenant Representation
+            <a href={`/services#site-selection`}>Site Selection</a> <br /> <a href={`/services#buyer-seller-representation`}>Buyer & Seller Representation</a>  <br /> <a href={`/services#investment-sales`}>Investment Properties</a> <br /><a href={`/services#large-lands`}>Large Project Lands</a> <br /> 
             
             </p>
 
@@ -50,7 +50,7 @@ const Footer = (props) => {
             <Link link="https://www.linkedin.com/company/sankalp-realty-us"><SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/LinkedIn.svg"} /></Link>
             <Link link="https://www.youtube.com/channel/UC89YkukgRJcQUO3_4jo7-zQ"><SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/youtube.svg"} /></Link>
             <Link link="https://www.facebook.com/sankalprealtyus"><SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/facebook.svg"} /></Link>
-            <a href="mailto:info@sankalprealty.us"><SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/email.svg"} /></a>
+            <a href="mailto:mp@sankalprealty.us"><SocialIcon src={"https://wp.sankalprealty.us/wp-content/uploads/2020/12/email.svg"} /></a>
 
             
           </div>
