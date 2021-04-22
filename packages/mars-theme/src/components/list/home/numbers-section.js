@@ -14,7 +14,7 @@ const NumbersSection = ({ state }) => {
       <SectionContainer key={"location-section"}>
         {/* <ScrollAnimation animateOnce animateIn="fadeInLeft" duration={3}> */}
           <ContentContainer>
-            <NumbersImage src={"http://wp.sankalprealty.us/wp-content/uploads/2021/04/Asset-2.svg"}></NumbersImage>
+            <NumbersImage src={"http://wp.sankalprealty.us/wp-content/uploads/2021/04/Asset-3.svg"}></NumbersImage>
           </ContentContainer>
         {/* </ScrollAnimation> */}
       </SectionContainer>
