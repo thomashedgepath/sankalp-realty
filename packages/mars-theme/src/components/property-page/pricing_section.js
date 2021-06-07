@@ -39,13 +39,13 @@ function PricingSection({ data, status }) {
             <Divider horizontal>
               <Header as="h4">Sale Price</Header>
             </Divider>
-            <CenterText>
+            <p>
               {formatMoney(data.sale_price.min)}
               {data.sale_price.max
                 ? ` - ${formatMoney(data.sale_price.max)} `
                 : " "}
               {data.sale_price.label}
-            </CenterText>
+            </p>
           </>
         ) : (
           <>
@@ -54,7 +54,7 @@ function PricingSection({ data, status }) {
                 <Divider horizontal>
                   <Header as="h4">Sale Price</Header>
                 </Divider>
-                <CenterText>Call for Current Sale Prices</CenterText>
+                <p>Call for Current Sale Prices</p>
               </>
             ) : (
               <></>
@@ -62,7 +62,6 @@ function PricingSection({ data, status }) {
           </>
         )}
 
-        <br></br>
 
         {/* For Lease Pricing Section */}
 
@@ -73,13 +72,13 @@ function PricingSection({ data, status }) {
             <Divider horizontal>
               <Header as="h4">Lease Rates</Header>
             </Divider>
-            <CenterText>
+            <p>
               {formatMoney(data.lease_rate.min)}
               {data.lease_rate.max
                 ? ` - ${formatMoney(data.lease_rate.max)} `
                 : " "}
               {data.lease_rate.label}
-            </CenterText>
+            </p>
           </>
         ) : (
           <>
@@ -88,7 +87,7 @@ function PricingSection({ data, status }) {
                 <Divider horizontal>
                   <Header as="h4">Lease Rates</Header>
                 </Divider>
-                <CenterText>Call for Current Lease Rates</CenterText>
+                <p>Call for Current Lease Rates</p>
               </>
             ) : (
               <></>
@@ -96,21 +95,8 @@ function PricingSection({ data, status }) {
           </>
         )}
       </>
-      <br></br>
     </>
   );
 }
 
 export default PricingSection;
-
-const CardImage = styled.img`
-  object-fit: cover;
-  float: left;
-  width: 250px;
-  height: 250px;
-  margin: -5px;
-`;
-
-const CenterText = styled.div`
-  text-align: center;
-`;

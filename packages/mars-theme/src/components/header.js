@@ -91,32 +91,3 @@ const Logo = styled.img`
   width: 10vw;
   margin: 5px 0 0 0;
 `;
-
-const NavItem = styled.div`
-  border-left: 1.5px solid #fff;
-  height: 100%;
-  margin: 0 0 0 0.8em;
-  width: auto;
-
-  &:hover {
-    border-left: 1.5px solid red;
-  }
-`;
-
-const NavLink = styled.a`
-  background-color: #000000;
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-size: 1.1em;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  line-height: 1.75;
-  margin-left: 0.4em;
-  text-transform: uppercase;
-
-  &:hover {
-    color: white;
-  }
-`;

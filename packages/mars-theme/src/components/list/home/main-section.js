@@ -50,6 +50,10 @@ const MainSection = ({ state, actions }) => {
 export default connect(MainSection);
 
 const SectionContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: center;
+  text-align: center;
   position: relative;
   overflow: hidden;
   flex-wrap: none;
@@ -63,59 +67,48 @@ const ContentContainer = styled.div`
   justify-items: center;
   text-align: center;
   font-weight: 400;
-  padding: 5vh 15vw;
+  width: 90vw;
+  margin: 5vw;
+  max-width: 1200px;
 
   @media (max-width: 768px) {
     display: block;
+    margin: 3em 0;
+    max-width: 90vw;
   }
 `;
 
 const PrimaryText = styled.h1`
   text-align: left;
   font-family: "Overpass", sans-serif;
-  font-size: 6vw;
+  font-size: 3em;
   color: #acacac;
-  line-height: 5vw;
-  letter-spacing: -0.5vw;
+  line-height: 0.9em;
+  letter-spacing: -0.08em;
   margin: 0;
-
-  @media (max-width: 768px) {
-    font-size: 6vw;
-    margin: 10vw;
-  }
 `;
 
 const SecondaryText = styled.h2`
   font-family: "Overpass", sans-serif;
-  font-size: 2.2vw;
+  font-size: 1em;
   color: black;
   text-align: left;
   font-weight: 600;
   margin: 0;
 
-  @media (max-width: 768px) {
-    font-size: 5.5vw;
-  }
 `;
 
 const PText = styled.p`
   font-family: "Overpass", sans-serif;
   text-align: left;
-  font-size: 1.75vw;
+  font-size: 0.9em;
   color: #858585;
   margin: 0;
-
-  @media (max-width: 768px) {
-    font-size: 5.5vw;
-  }
 `;
-// const Divider = styled.div`
-//   width: 100%;
-//   height: 2vw;
-// `;
 
 const Button = styled.img`
-  width: 30vw;
+  width: 15em;
+  max-width: 90vw;
   margin: 5vh 0;
   cursor: pointer;
 
@@ -133,9 +126,9 @@ const TextContainer = styled.span`
     text-decoration: underline;
   }
 
-  @media (max-width: 768px) {
+  ${'' /* @media (max-width: 768px) {
     display: inline;
     font-size: 6vw;
     letter-spacing: -0.5px;
-  }
+  } */}
 `;

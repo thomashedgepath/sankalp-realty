@@ -74,10 +74,15 @@ const MapContainer = styled.div`
   position: absolute;
   left: 0;
   list-style: none;
+
+  @media (max-width: 1100px) {
+    display: none;
+  }
 `;
 
 const PropertyContainer = styled.div`
   width: 40%;
+  min-width: 650px;
   height: 80vh;
   position: absolute;
   right: 0;
@@ -90,6 +95,13 @@ const PropertyContainer = styled.div`
   /* Chrome Safari Opera */
   ::-webkit-scrollbar {
     display: none;
+  }
+
+  @media (max-width: 1100px) {
+    width: 90vw;
+    margin: auto;
+    min-width: 0;
+    overflow-x: visible;
   }
 `;
 const ScrollBox = styled.div``;

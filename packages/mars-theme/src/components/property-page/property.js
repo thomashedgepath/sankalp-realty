@@ -148,24 +148,23 @@ const Property = ({ state, actions }) => {
               )}
             </Table>
 
-            <PricingSection
-              data={data.pricing}
-              status={data.status}
-            ></PricingSection>
+            <CenterText>
+              <PricingSection
+                data={data.pricing}
+                status={data.status}
+              />
+            </CenterText>
 
             <Divider horizontal>
               <Header as="h4">Listing Agent</Header>
             </Divider>
 
             <CenterText>
-              <br />
-              <Address>Mukesh Parna</Address>
-              mp@sankalprealty.us
-              <br />
-              (469) 712-6773
-              <br />
-              <br />
+              <h2>Mukesh Parna</h2>
+              <p>mp@sankalprealty.us</p>
+              <p>(469) 712-6773</p>
             </CenterText>
+
             <ButtonContainer>
               <Button
                 fluid
@@ -233,7 +232,6 @@ const MainColumn = styled.div`
   display: flex;
   font-weight: 500;
   text-align: left;
-  font-size: 1vw;
   align-content: center;
   align-items: center;
   justify-content: center;
@@ -263,6 +261,14 @@ const MainContent = styled.div`
   width: 100%;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+
+  .ui.header {
+    font-size: .5em;
+    line-height: 1em;
+  }
+  .ui.table {
+    font-size: 0.75em;
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -271,6 +277,10 @@ const ButtonContainer = styled.div`
   align-items: center;
   width: 100%;
   margin: 10px 0 10px 0;
+
+  .ui.button, .ui.buttons .button, .ui.buttons .or {
+    font-size: 0.5rem;
+  }
 `;
 
 // Text Styles
@@ -326,4 +336,16 @@ const TagContainer = styled.div`
 
 const CenterText = styled.div`
   text-align: center;
+  margin-bottom: 2em;
+
+  h2 {
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #2e5077;
+    margin-bottom: .5em;
+  }
+  p {
+    font-size: 0.75em;
+    margin: 0;
+  }
 `;

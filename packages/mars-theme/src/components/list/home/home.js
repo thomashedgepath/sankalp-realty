@@ -5,6 +5,7 @@ import MainSection from "./main-section";
 import EmailSignup from "./email-signup";
 import PropertiesSection from "./properties-section";
 import NumbersSection from "./numbers-section";
+import KeyStats from "./key-stats";
 
 const Home = ({ state }) => {
   // Get the data of the current list.
@@ -17,10 +18,12 @@ const Home = ({ state }) => {
       <MainSection />
       
       <EmailSignup />
+
+      <KeyStats />
       
       <PropertiesSection />
 
-      <NumbersSection />
+      {/* <NumbersSection /> */}
 
     </>
   );

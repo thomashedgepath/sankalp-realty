@@ -31,7 +31,7 @@ const SectionContainer = styled.div`
   position: relative;
   overflow: hidden;
   flex-wrap: none;
-  height: 60vh;
+  height: 15em;
   width: 100vw;
   text-align: center;
   z-index: 900;
@@ -42,7 +42,7 @@ const ContentContainer = styled.div`
   background-color: black;
   font-family: "Overpass", sans-serif;
   letter-spacing: -1.98px;
-  height: 100%;
+  width: 100vw;
 
   @media (max-width: 768px) {
     display: block;
@@ -52,30 +52,24 @@ const ContentContainer = styled.div`
 
 const MapImage = styled.img`
   object-fit: cover;
-  width: 100%;
+  height: 15em;
+  min-width: 100vw;
   opacity: 0.4;
-  ${
-    "" /* mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0)); */
-  }
-
-  @media (max-width: 768px) {
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-  }
 `;
 
 const ButtonImage = styled.img`
   position: absolute;
-  top:15vh;
-  left: 35vw;
-  width: 30vw;
+  top: 0;
+  left: 0;
+  width: 15em;
+  max-width: 90vw;
   object-fit: cover;
   cursor: pointer;
+  margin: auto;
+  right: 0;
+  bottom: 0;
   
   &:hover{
     transform: scale(1.1);
-  }
-
-  @media (max-width: 768px) {
-    
   }
 `;

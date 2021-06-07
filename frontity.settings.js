@@ -53,9 +53,3 @@ const settings = {
 };
 
 export default settings;
-
-
-// [
-//   "Japan",
-//   "/tag/japan/"
-// ],

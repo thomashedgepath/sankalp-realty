@@ -36,22 +36,6 @@ const Hero = (props) => {
         <BackgroundVideoContent>
           <HeroH1>Welcome to the country’s <span style={{color: "#7CD176"}}>fastest growing </span>commercial real estate market.</HeroH1><br/>
           <Divider />
-{/* 
-          <Link link="">
-            <HeroButtonMain variant="contained" color="primary">
-              Order Online Now!
-            </HeroButtonMain>
-          </Link>
-
-          <Link link="/locations/">
-            <HeroButtonSecondary
-              href="/directions"
-              variant="contained"
-              color="secondary"
-            >
-              Get directions
-            </HeroButtonSecondary>
-          </Link> */}
         </BackgroundVideoContent>
 
         <DownArrowBounce
@@ -91,15 +75,7 @@ const PageHero = styled.div`
   overflow: hidden;
   background-color: black;
   width: 100vw;
-  height: 70vh;
-  
 
-  @media (max-width: 768px) {
-    height: 95vh;
-  }
-  @media (max-aspect-ratio: 114/100) {
-    height: 95vh;
-  }
 `;
 
 const BackgroundVideo = styled.video`
@@ -136,15 +112,9 @@ const BackgroundVideoContent = styled.div`
 
   @media (max-width: 768px) {
     text-align: left;
-    width: 75vw;
+    width: 90vw;
     margin: auto;
-    padding: 15vw 5vw 10vw 5vw;
-  }
-  @media (max-aspect-ratio: 114/100) {
-    text-align: left;
-    width: 80vw;
-    margin: 10vh 10px 0 10vw;
-    padding: 0 0 0 0;
+    padding: 5em 0 5em 0;
   }
 `;
 
@@ -160,17 +130,6 @@ const BackgroundImage = styled.img`
   height: 100%;
 `;
 
-// const VideoOverlay = styled.div`
-//     position: relative;
-//     color: black;
-//     background-color: rgba(0, 0, 0, 0.7);
-//     opacity: 0.8;
-//     width: 100vw;
-//     height: 100%;
-
-// `
-
-
 const DownArrowBounce = styled(Animated)`
   position: fixed;
   margin: 0 45vw 0 45vw ;
@@ -181,9 +140,9 @@ const DownArrowBounce = styled(Animated)`
 
 const HeroH1 = styled.h1`
   color: #FFFFFF;
-  font-size: 5vw;
-  letter-spacing: -3.91pt;
-  line-height: 8vh;
+  font-size: 2.5em;
+  letter-spacing: -0.02em;
+  line-height: 1em;
   display: inline;
   font-family: "Overpass", sans-serif;
   font-weight: 700;
@@ -192,148 +151,14 @@ const HeroH1 = styled.h1`
   font-style: italic;
 
   @media (max-aspect-ratio: 114/100) {
-    font-size: min(130px, 15vw);
-    letter-spacing: -0.2vh;
-    line-height: min(100px, 15vw);
     text-align: left;
 
   }
   @media (max-width: 768px) {
-    font-size: 15vw;
-    letter-spacing: 0.3vw;
-    line-height: 10.75vw;
     text-align: left;
   }
 `;
 
-// const HeroH1Colored = styled(HeroH1)`
-//   color: #c2a878;
-// `;
-
-// const HeroH2 = styled.h2`
-//   color: #f1f5f2;
-//   text-align: center;
-//   font-size: 2.5vw;
-//   letter-spacing: -1pt;
-//   font-family: "Montserrat", sans-serif;
-//   margin: 0;
-//   font-weight: 500;
-//   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-
-//   @media (max-width: 768px) {
-//     font-size: 4vw;
-//     letter-spacing: 0.05vw;
-//     text-align: left;
-//     margin: 2vw 0 0 0;
-//   }
-//   @media (max-aspect-ratio: 114/100) {
-//     font-size: 4vw;
-//     letter-spacing: 0.05vw;
-//     text-align: left;
-//     margin: 2vw 0 0 0;
-//   }
-// `;
-
-const HeroButtonMain = styled.button`
-  border: 2px;
-  cursor: pointer;
-  margin: 3vw 10px;
-  display: inline-flex;
-  outline: 0;
-  position: relative;
-  align-items: center;
-  user-select: none;
-  vertical-align: middle;
-  justify-content: center;
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
-  padding: 6px 16px;
-  font-size: 1.5vw;
-  width: auto;
-  box-sizing: border-box;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 500;
-  line-height: 1.75;
-  border-radius: 4px;
-  letter-spacing: 0.02857em;
-  text-transform: uppercase;
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  color: #fff;
-  background-color: #6369d1;
-  border-color: #6369d1;
-  border-style: solid;
-
-  &:hover {
-    background-color: #3f51b5;
-    border-color: #3f51b5;
-  }
-  @media (max-aspect-ratio: 114/100) {
-    margin: 2.5vh auto 2vh auto;
-    display: flex;
-    width: 60vw;
-    font-size: 4vw;
-  }
-  @media (max-width: 768px) {
-    margin: 15vw auto 5vw auto;
-    display: flex;
-    width: 60vw;
-    font-size: 4vw;
-  }
-`;
-const HeroButtonSecondary = styled.button`
-  border: 2px;
-  cursor: pointer;
-  margin: 3vw 10px;
-  display: ${(props) => (props.mobile ? "block" : "inline-flex")};
-  outline: 0;
-  position: relative;
-  align-items: center;
-  user-select: none;
-  vertical-align: middle;
-  justify-content: center;
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
-  padding: 6px 16px;
-  font-size: 1.5vw;
-  width: auto;
-  box-sizing: border-box;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 500;
-  line-height: 1.75;
-  border-radius: 4px;
-  letter-spacing: 0.02857em;
-  text-transform: uppercase;
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0);
-  border-color: #fff;
-  border-style: solid;
-
-  &:hover {
-    border-color: #6369d1;
-  }
-
-  @media (max-width: 768px) {
-    margin: 0vw auto 10vw auto;
-    display: flex;
-    width: 60vw;
-    font-size: 4vw;
-  }
-  @media (max-aspect-ratio: 114/100) {
-    margin: 0vw auto 10vw auto;
-    display: flex;
-    width: 60vw;
-    font-size: 4vw;
-  }
-`;
 const Divider = styled.div`
   display: none;
   @media (max-width: 768px) {

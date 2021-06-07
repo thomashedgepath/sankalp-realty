@@ -96,6 +96,9 @@ const globalStyles = css`
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"');
     @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
   }
+  html {
+    font-size: calc(32px + (36 - 32) * ((100vw - 1000px) / (4000 - 1000)));
+  }
   body {
     margin: 0 !important;
     font-size: 1em !important;
@@ -237,9 +240,17 @@ const globalStyles = css`
     display: block;
   }
   .form-label{
-    margin: 10px 0 5px 0;
-    
+    margin: 10px 0 5px 0; 
   }
+  @media (max-width: 1000px) {
+  html {
+    font-size: calc(22px + (32 - 22) * ((100vw - 768px) / (1000 - 768)));
+  }
+  @media (max-width: 768px) {
+  html {
+    font-size: 22px;
+  }
+}
 `;
 
 const HeadContainer = styled.div`

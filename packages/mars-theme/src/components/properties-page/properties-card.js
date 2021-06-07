@@ -59,9 +59,7 @@ const PropertiesCard = ({ data, prop_id, link, state, selected, actions }) => {
                   <p
                     style={{ margin: "0px" }}
                   >{`Total Available: ${data.availability.total_availability} ${data.availability.units}`}</p>
-                  <p id={"rates"} style={{ margin: "0px" }}>
-                    <br/><br/>
-                  </p>
+
 
                   <ButtonDiv>
                     <Link link={link} passHref>
@@ -85,7 +83,7 @@ export default connect(PropertiesCard);
 
 const PropertyPaper = styled.div`
   -webkit-font-smoothing: antialiased;
-  font-size: 0.875rem;
+  font-size: 1em;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
   line-height: 1.43;
@@ -96,7 +94,7 @@ const PropertyPaper = styled.div`
   -webkit-box-pack: center;
   justify-content: center;
   height: 100%;
-  max-width: 100%;
+  min-width: 650px;
   color: rgba(0, 0, 0, 0.87);
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   background-color: white;
@@ -134,12 +132,26 @@ const CardImage = styled.img`
   height: 110%;
   margin: -5px;
 `;
+
 const CardContent = styled.div`
   overflow: hidden;
   margin: 5px 5px 5px 52%;
   width: 48%;
   grid-column-start: 2;
+
+  p {
+    font-size: 0.5em;
+  }
+  a {
+    margin: 0;
+  }
+  .ui.button, .ui.buttons .button, .ui.buttons {
+    font-size: 0.5em;
+    height: 2em;
+    line-height: 0.5em;
+  }
 `;
+
 const CardHeader = styled.h2`
   margin-top: 5px;
   margin-bottom: 5px;
@@ -152,6 +164,7 @@ const CardAddress = styled.h2`
   margin: 0px;
   margin-bottom: 5px;
   line-height: 0.8em;
+  font-size: 0.75em;
 `;
 const CardSubAddress = styled.h3`
   margin-top: 0px;
@@ -162,8 +175,6 @@ const CardSubAddress = styled.h3`
 `;
 
 const ButtonDiv = styled.div`
-  display: flex;
-  justify-content: center;
   margin-top: 20px;
 `;
 
@@ -201,32 +212,10 @@ const LinkButton = styled.button`
   }
 `;
 
-const TagLabel = styled.div`
-  -webkit-font-smoothing: antialiased;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  letter-spacing: 0.01071em;
-  text-align: left;
-  box-sizing: inherit;
-  display: inline-block;
-  line-height: 0.6;
-  vertical-align: baseline;
-  margin: 0 5px 5px 0;
-  background-image: none;
-  padding: 0.5833em 0.833em;
-  text-transform: none;
-  font-weight: 700;
-  border: 0 solid transparent;
-  border-radius: 0.28571429rem;
-  transition: background 0.1s ease;
-  margin-left: 0;
-  text-transform: uppercase;
-  background-color: ${(props) =>
-    props.color ? props.color : "gray"} !important;
-  border-color: ${(props) => (props.color ? props.color : "gray")} !important;
-  color: ${(props) => (props.textColor ? props.textColor : "white")} !important;
-  font-size: 0.78571429rem;
-`;
-
 const TagContainer = styled.div`
   margin: 5px 0 10px 0;
+
+  .ui.small.label, .ui.small.labels .label {
+    font-size: 0.4em;
+  }
 `;

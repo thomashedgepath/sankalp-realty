@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { connect, styled, decode, Head } from "frontity";
 import TextField from "@material-ui/core/TextField";
-import jsonp from "jsonp";
-import queryString from "query-string";
 import * as EmailValidator from "email-validator";
 
 const EmailSignup = ({ state }) => {
@@ -79,6 +77,19 @@ const EmailInputField = styled(TextField)`
 const EmailForm = styled.form`
   margin: 1.5vh;
 
+  .MuiInputBase-input {
+    font-size: 0.8em;
+  }
+
+  .MuiFormLabel-root.Mui-error {
+    color: green;
+    font-size: 0.8em;
+  }
+
+  .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+    border-color: green;
+  }
+
   @media (max-width: 768px) {
     padding: 10px 10%;
   }
@@ -100,18 +111,14 @@ const SignupLabel = styled.h2`
   color: #f3f3f3;
   display: block;
   font-family: "Overpass", sans-serif;
-  font-size: 2.5vw;
-  letter-spacing: -1.98px;
+  font-size: 1em;
+  letter-spacing: -0.02em;
   margin: 0;
   padding: 0px 0 5px;
   text-align: center;
   text-transform: uppercase;
-
-  @media (max-width: 768px) {
-    font-size: 6vw;
-    letter-spacing: -0.5px;
-  }
 `;
+
 const SubmitButtonMain = styled.button`
   -webkit-tap-highlight-color: transparent;
   background-color: #6369d1;
@@ -125,7 +132,7 @@ const SubmitButtonMain = styled.button`
   color: #fff;
   cursor: pointer;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-size: 1rem;
+  font-size: 0.8em;
   font-weight: 400;
   letter-spacing: 0.00938em;
   line-height: 1.1876em;
