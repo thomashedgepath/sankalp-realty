@@ -35,9 +35,9 @@ export default connect(KeyStats);
 const Container = styled.div`
   display: grid;
   margin: 2rem 0;
-  grid-gap: 1rem 20px;
+  grid-gap: 1rem;
   width: 100%;
-  max-width: 1600px;
+  max-width: 1350px;
   justify-content: space-evenly;
   justify-items: center;
   align-content: space-evenly;
@@ -47,16 +47,23 @@ const Container = styled.div`
 
 const Group = styled.div`
   text-align: center;
+  padding: 0.5em;
+  width: 90%;
+  background-color: #F79837;
+  border-radius: 4px;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
 `;
 
 const Number = styled.div`
   font-size: 2rem;
   line-height: normal;
   font-weight: 600;
-  color: #832232;
+  color: #2B4F77;
 `;
 
 const Text = styled.div`
   font-size: 1rem;
   line-height: 1rem;
+  width: 90%;
+  margin: auto;
 `;

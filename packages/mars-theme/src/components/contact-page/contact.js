@@ -39,15 +39,22 @@ const ContentContainer = styled.div`
 
   width: 100%;
   height: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const RightContainer = styled.div`
   align-items: center;
   justify-content: center;
-  padding: 7.5vh 5vw 1.5vh 5vw;
-
   width: 50vw;
   height: 100%;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 2em 0 0 0;
+  }
 `;
 
 const LeftContainer = styled(RightContainer)`
@@ -61,42 +68,21 @@ const LeftContainer = styled(RightContainer)`
 const PrimaryText = styled.h1`
   text-align: left;
   font-family: "Overpass", sans-serif;
-  font-size: 6vw;
+  font-size: 3em;
   color: #acacac;
-  line-height: 9vh;
-  letter-spacing: -0.35vw;
+  line-height: 1;
+  letter-spacing: -0.05em;
   margin: 0;
-
-
-  @media (max-width: 768px) {
-    font-size: 6vw;
-    margin: 10vw;
-  }
 `;
 
-const SecondaryText = styled.h2`
-  font-family: "Overpass", sans-serif;
-  font-size: 2.2vw;
-  color: black;
-  text-align: left;
-  font-weight: 600;
-  margin: 0;
-
-  @media (max-width: 768px) {
-    font-size: 5.5vw;
-  }
-`;
 
 const PText = styled.p`
   font-family: "Overpass", sans-serif;
   text-align: left;
-  font-size: 1.75vw;
+  font-size: 0.8em;
   color: #000;
   margin: 2vh 0 0 0;
   line-height: 1;
   letter-spacing: 0.35pt;
 
-  @media (max-width: 768px) {
-    font-size: 5.5vw;
-  }
 `;

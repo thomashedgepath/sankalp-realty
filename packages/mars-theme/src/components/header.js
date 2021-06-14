@@ -85,9 +85,13 @@ const LogoContainer = styled.div`
   }
 `;
 const Logo = styled.img`
-  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 1));
   max-width: 120px;
   min-width: 80px;
   width: 10vw;
   margin: 5px 0 0 0;
+
+  @media (max-width: 768px) {
+    min-width: 50px;
+  }
 `;

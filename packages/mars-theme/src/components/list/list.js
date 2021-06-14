@@ -98,10 +98,10 @@ const PropertyContainer = styled.div`
   }
 
   @media (max-width: 1100px) {
-    width: 90vw;
-    margin: auto;
+    width: 100vw;
     min-width: 0;
     overflow-x: visible;
+    left: 5px;
   }
 `;
 const ScrollBox = styled.div``;

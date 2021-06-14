@@ -70,7 +70,7 @@ const Property = ({ state, actions }) => {
                   <></>
                 )}
               </TagContainer>
-              <PageHeader>{data.property_name}</PageHeader>
+              {data.property_name && <PageHeader>{data.property_name}</PageHeader>}
               <Address>{address_string}</Address>
             </div>
 
@@ -225,6 +225,7 @@ const ContentContainer = styled.div`
   @media (max-width: 768px) {
     display: block;
     letter-spacing: -0.5px;
+    margin: 2em 0 0 0;
   }
 `;
 const MainColumn = styled.div`
@@ -237,9 +238,6 @@ const MainColumn = styled.div`
   justify-content: center;
   background-color: none;
   margin: 10px 0 10px 0;
-
-  @media (max-width: 768px) {
-  }
 `;
 const SideColumn = styled(MainColumn)`
   grid-column-start: 3;
@@ -267,7 +265,12 @@ const MainContent = styled.div`
     line-height: 1em;
   }
   .ui.table {
-    font-size: 0.75em;
+    font-size: 0.6em;
+  }
+  .ui.large.label, .ui.large.labels .label {
+    font-size: 0.5rem;
+    border-radius: 0.3em;
+    line-height: 1em;
   }
 `;
 
@@ -285,35 +288,31 @@ const ButtonContainer = styled.div`
 
 // Text Styles
 const PageHeader = styled.h1`
-  font-size: 2vw;
-  line-height: 1.75vw;
+  font-size: 1.25em;
+  line-height: 1em;
   text-transform: uppercase;
   color: #991a1e;
 `;
 const Address = styled.h2`
-  font-size: 1.5vw;
-  line-height: 0;
+  font-size: 0.75em;
+  line-height: 1;
   text-transform: uppercase;
   color: #2e5077;
 `;
 const SecondaryHeader = styled.h3`
-  font-size: 1vw;
-  line-height: 0.5vw;
+  font-size: 0.75em;
+  line-height: 1;
   text-transform: uppercase;
   color: #666766;
 `;
 const SidebarHeader = styled.h3`
-  font-size: 2vw;
-  line-height: 0.5vw;
+  font-size: 0.75em;
+  line-height: 1;
   text-transform: uppercase;
   color: #991a1e;
 `;
-const SectionTitle = styled.h3`
-  font-size: 2vh;
-  color: black;
-`;
 const DescriptionText = styled.p`
-  font-size: 2vh;
+  font-size: 0.75em;
   color: black;
 `;
 

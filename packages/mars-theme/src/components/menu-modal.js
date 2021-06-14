@@ -8,45 +8,51 @@ const MenuModal = ({ state }) => {
 
   return (
     <>
-      <MenuOverlay />
+      <MenuOverlay>
       <MenuContent as="nav">
+      <div style={{height: "3rem"}}></div>
         {isThereLinks &&
           menu.map(([name, link]) => (
+            <>
             <MenuLink
               key={name}
               link={link}
               aria-current={state.router.link === link ? "page" : undefined}
             >
               {name}
+              
             </MenuLink>
+            </>
           ))}
       </MenuContent>
+      </MenuOverlay>
     </>
   );
 };
 
 const MenuOverlay = styled.div`
-  background-color: #056613;
-  width: 60vw;
-  height: 100vh;
-  overflow: hidden auto;
   position: fixed;
-  z-index: 2;
+  background-color: #1F4E4A;
+  width: 100vw;
+  height: 200vh;
+  z-index: 9998;
   top: 0;
-  right: 0;
+  left: 0;
 `;
 
 const MenuContent = styled.div`
-  z-index: 3;
+  z-index: 9999;
+  padding: 1rem 1rem 0 0;
 `;
 
 const MenuLink = styled(Link)`
   width: 100%;
   display: inline-block;
   outline: 0;
-  font-size: 20px;
-  text-align: center;
-  padding: 1.2rem 0;
+  font-size: 1.75rem;
+  text-align: right;
+  padding: 1rem 0;
+  line-height: 1;
 
   &:hover,
   &:focus {

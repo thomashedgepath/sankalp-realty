@@ -25,7 +25,7 @@ const PropertiesCard = ({ data, prop_id, link, state, selected, actions }) => {
           <>
             <CardContainer>
               {/* Property Image */}
-              <CardImage src={data.images[1].url} />
+              <CardImage><img src={data.images[1].url}></img></CardImage>
 
               <CardContent>
                 <TagContainer>
@@ -120,17 +120,37 @@ const PropertyPaper = styled.div`
     border: #d20000;
     border-style: outset;
   }
+  @media (max-width: 768px) {
+    width: 90vw;
+    min-width: 0;
+  }
+
 `;
 const CardContainer = styled.div`
   height: 250px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    display: block;
+    height: 100%;
+    width: 90vw;
+  }
 `;
-const CardImage = styled.img`
-  object-fit: cover;
+const CardImage = styled.div`
   float: left;
   width: 50%;
   height: 110%;
   margin: -5px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    width: 110%;
+  }
 `;
 
 const CardContent = styled.div`
@@ -149,6 +169,12 @@ const CardContent = styled.div`
     font-size: 0.5em;
     height: 2em;
     line-height: 0.5em;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+    padding: 0.5em;
+    width: 100%;
   }
 `;
 
