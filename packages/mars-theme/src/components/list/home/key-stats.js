@@ -6,11 +6,10 @@ const KeyStats = () => {
     <>
       <Container>
         <Group>
-          <Number>1,000+ AC</Number>
-          <Text>AG Lands</Text>
+          <img src={"http://wp.sankalprealty.us/wp-content/uploads/2021/06/circle-infographic_1.svg"}/>
         </Group>
 
-        <Group>
+        {/* <Group>
           <Number>200+ AC</Number>
           <Text>Development Ready Land</Text>
         </Group>
@@ -21,9 +20,9 @@ const KeyStats = () => {
         </Group>
 
         <Group>
-          <Number>150+ </Number>
+          <Number>100+ </Number>
           <Text>Residential Homes</Text>
-        </Group>
+        </Group> */}
         
       </Container>
     </>
@@ -49,9 +48,9 @@ const Group = styled.div`
   text-align: center;
   padding: 0.5em;
   width: 90%;
-  background-color: #F79837;
+  ${'' /* background-color: #F79837;
   border-radius: 4px;
-  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25)); */}
 `;
 
 const Number = styled.div`

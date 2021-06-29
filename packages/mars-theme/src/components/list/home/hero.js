@@ -38,7 +38,7 @@ const Hero = (props) => {
           <Divider />
         </BackgroundVideoContent>
 
-        <DownArrowBounce
+        {/* <DownArrowBounce
           animationIn="bounce"
           animationOut="fadeOutDown"
           animationInDuration={1000}
@@ -62,7 +62,7 @@ const Hero = (props) => {
               </g>
             </g>
           </svg>
-        </DownArrowBounce>
+        </DownArrowBounce> */}
       </PageHero>
     </>
   );
